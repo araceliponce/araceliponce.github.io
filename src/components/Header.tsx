@@ -72,7 +72,6 @@ export default function Header() {
         <a
           className="logo"
           href="#"
-          target="_blank"
         >
           <img src="favicon.png" alt="logo de Araceli" />
           <span className="sr-only">Volver al inicio</span>
