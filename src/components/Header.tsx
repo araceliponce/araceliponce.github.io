@@ -61,14 +61,14 @@ export default function Header() {
 
     <header
 
-      className={`fixed lg:sticky top-0 right-0 left-0 z-50  px-2 pt-2 transition-colors `}
+      className={`fixed lg:sticky top-0 right-0 left-0 z-50 pt-2 transition-colors `}
     >
       {/* <div className={`
        contained mx-auto px-2 py-1 h-[3rem]  rounded-md flex items-center justify-between transition-colors
       ${isScrolling ? "bg-none backdrop-blur-sm text-gray-700 has-filter-hue" : "bg-white "} 
       `}> */}
       <div className={`
-       contained mx-auto px-2 py-1 h-[3rem]  rounded-md flex items-center justify-between transition-colors header-inner`}>
+       contained mx-auto px-1 py-1  flex items-center justify-between transition-colors header-inner`}>
         <a
           className="logo"
           href="#"
@@ -83,6 +83,7 @@ export default function Header() {
           onClick={handleOpen}
           className="ml-auto grid rounded-md lg:hidden bg-white"
         >
+          <span className="sr-only">Abrir navegación</span>
 
           {open ? (
 
@@ -105,7 +106,7 @@ export default function Header() {
       </div>
       <Collapse open={open} className={open ? "block" : "hidden"}>
         <div className="contained mx-auto mt-2 rounded-lg border mobile-nav px-6 py-5">
-          <ul className="flex flex-col gap-4 text-blue-gray-900">
+          <ul className="flex flex-col gap-2 text-blue-gray-900">
             <NavItem href="#">Inicio</NavItem>
             <NavItem href="#experiencia">Experiencia</NavItem>
             <NavItem href="#proyectos">Proyectos</NavItem>

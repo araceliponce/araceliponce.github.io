@@ -1,23 +1,36 @@
-// "use client";
-
 import { li } from "@/definitions";
-
+import { Icon } from "@iconify/react";
 export default function Hero() {
   return (
-    <section id="hero" className="relative mt-5 mx-[.5rem] lg:mx-[1rem]   bg-[#07939b] text-white has-noise">
+    <section id="hero" className="relative ">
 
 
-      <div className="">
+      <div className=" bg-[#07939b] text-white hero-inner pt-[13rem]">
 
-        <h1 className="">Araceli Ponce Sanga </h1>
-        <p className="subheading text-white pt-3 pb-5">Desarrolladora web</p>
+        <div className="flow">
+          <h1 className="">Araceli Ponce Sanga </h1>
+          <p className="heading-card text-white p-0 pt-2">Desarrolladora web</p>
 
-        <div className="flex flex-wrap items-start gap-3 ">
-          <div className="text-center">
-            <a href="mailto:aponcesanga@gmail.com" className="grid-row btn-cta">Contactar</a>
-            <small className="block pt-1">aponcesanga@gmail.com</small>
+          <div className="flex-group w-fit gap-4 pt-4">
+            <div className="text-center">
+              <a href="mailto:aponcesanga@gmail.com" className="mx-auto w-fit btn-cta rounded-md  duration-300  active:translate-y-1 active:scale-x-110 active:scale-y-90 flex items-center justify-center gap-2 p-2 px-5">
+                <span>Contactar</span>
+                <Icon icon="ooui:recent-changes-ltr" />
+              </a>
+              <small className="block pt-1">aponcesanga@gmail.com</small>
+            </div>
+
+
+
+
+            <a href={li} className="h-fit rounded-md btn-outlined duration-300  active:translate-y-1 active:scale-x-110 active:scale-y-90 flex items-center justify-center gap-2 p-2 px-5 text-white backdrop-blur-sm">
+              <span>Ver LinkedIn</span>
+              <Icon icon="ooui:link-external-ltr" />
+            </a>
+
+
+
           </div>
-          <a href={li} className="grid-row btn-outlined"> Ver LinkedIn</a>
         </div>
       </div>
 

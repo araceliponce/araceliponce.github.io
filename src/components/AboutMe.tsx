@@ -3,9 +3,8 @@
 import React from "react";
 import { Tag } from "@a_r_a_c_e_l_i/library";
 import { Heading } from "@a_r_a_c_e_l_i/library";
-// import { Tag } from "@/lib/Tag";
-
-
+import { li } from "@/definitions";
+import { Icon } from "@iconify/react";
 
 export default function AboutMe() {
   return (
@@ -40,26 +39,23 @@ export default function AboutMe() {
 
 
           <div>
-            <h3 className='heading-card pb-2'>Certificados:</h3>
-            <div className="grid sm:grid-cols-2 *:childs-outlined *:grid gap-2 *:gap-2">
+            <h3 className='heading-card pb-2'>Certificados recientes:</h3>
+            <div className="grid sm:grid-cols-2  *:grid gap-2 *:gap-2">
 
-              <div>
-                {/* <img src='certus_1.webp' loading='lazy' width={300} height={300} />
-                <img src='certus_2.webp' loading='lazy' width={300} height={300} /> */}
-                <a href={`certus_1.webp?ref=portfolio`}>
-                  <img src="certus_1.webp" loading="lazy" alt="" height={500} width={300} />
+              <div className="*:border">
+
+                <a href={`certus_1.webp?ref=portfolio`} title="Certificado Certus, página 1">
+                  <img src="certus_1.webp" loading="lazy" alt="Certificado Certus, página 1" height={500} width={300} />
                 </a>
-                <a href={`certus_2.webp?ref=portfolio`}>
-                  <img src="certus_2.webp" loading="lazy" alt="" height={500} width={300} />
+                <a href={`certus_2.webp?ref=portfolio`} title="Certificado Certus, página 2">
+                  <img src="certus_2.webp" loading="lazy" alt="Certificado Certus, página 2" height={500} width={300} />
                 </a>
 
               </div>
 
               <div className="">
-                {/* <img src='english.webp' loading='lazy' width={300} height={300} /> */}
-
-                <a href={`english.webp?ref=portfolio`}>
-                  <img src="english.webp" loading="lazy" alt="" height={500} width={300} />
+                <a href={`english.webp?ref=portfolio`} className="border" title="Certificado de inglés">
+                  <img src="english.webp" loading="lazy" alt="Certificado de inglés" height={500} width={300} />
                 </a>
 
               </div>

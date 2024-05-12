@@ -1,9 +1,4 @@
-"use client"
-
 import React from 'react'
-
-import { Tag } from '@a_r_a_c_e_l_i/library'
-
 import { useState, useEffect } from 'react'
 
 
@@ -41,72 +36,44 @@ export default function ApSidebar() {
     <aside className='sidebar align-content-start p-3 outlined text-md leading-tight'>
 
 
-      <div className="intro py-2">
-        <p className='heading-card pb-2 opacity-90'>Portafolio de Araceli Ponce Sanga</p>
+      <div className="intro py-2 px-1">
+        <p className='text-lg leading-tight pb-2 opacity-90'>Portafolio de Araceli Ponce Sanga</p>
       </div>
-
-
 
       <nav className=''>
         <ol className='grid gap-2'>
           <li className="list-sidebar-item ">
 
-            <a href="#experiencia" className="card card-1 btn-primary">
-              <div className="content grid-row has-noise">
-
-                <span className="text-xl">✦</span>
-                <span className=''>
-                  <b className='block'>Experiencia</b>
-                  {/* <span>¿En qué he trabajado ultimamente?</span> */}
-                </span>
-              </div>
+            <a href="#experiencia" className="btn-primary w-100 has-noise rounded-md  duration-300  active:translate-y-1 active:scale-x-110 active:scale-y-90 flex items-center gap-2 p-5">
+              <span className="text-xl" aria-hidden={true}>✦</span>
+              <span>Experiencia</span>
             </a>
 
           </li>
           <li className="list-sidebar-item ">
-            <a href="#proyectos" className="card card-1 btn-primary">
-              <div className="content grid-row has-noise">
-                <span className="text-xl">✦</span>
-                <span className=''>
-                  <b className='block'>Proyectos</b>
-                  {/* <span>Una selección de mis proyectos públicos del 2024.</span> */}
-                </span>
-              </div>
+            <a href="#proyectos" className="btn-primary w-100 has-noise rounded-md  duration-300  active:translate-y-1 active:scale-x-110 active:scale-y-90 flex items-center gap-2 p-5">
+              <span className="text-xl" aria-hidden={true}>✦</span>
+              <span>Proyectos</span>
             </a>
-
           </li>
 
           <li className="list-sidebar-item ">
-
-
-            <a href="#habilidades" className="card card-1 btn-primary">
-              <div className="content grid-row has-noise">
-                <span className="text-xl">✦</span>
-                <span className=''>
-                  <b className='block'>Habilidades</b>
-                  {/* <span>Principales habilidades como desarrolladora.</span> */}
-                </span>
-              </div>
+            <a href="#habilidades" className="btn-primary w-100 has-noise rounded-md  duration-300  active:translate-y-1 active:scale-x-110 active:scale-y-90 flex items-center gap-2 p-5">
+              <span className="text-xl" aria-hidden={true}>✦</span>
+              <span>Habilidades</span>
             </a>
 
           </li>
           <li className="list-sidebar-item ">
-            <a href="#acerca-de-mi" className="card card-1 btn-primary">
-              <div className="content grid-row has-noise">
-
-                <span className="text-xl">✦</span>
-                <span>
-                  <b className='block'>Acerca de mí</b>
-                  {/* <span>¿Quién soy?¿Dónde he estudiado? Y más.</span> */}
-                </span>
-              </div>
+            <a href="#acerca-de-mi" className="btn-primary w-100 has-noise rounded-md  duration-300  active:translate-y-1 active:scale-x-110 active:scale-y-90 flex items-center gap-2 p-5">
+              <span className="text-xl" aria-hidden={true}>✦</span>
+              <span>Acerca de mí</span>
             </a>
-
           </li>
         </ol>
       </nav>
 
-      <div className='time-wrapper flex gap-1 py-5 text-lg opacity-80 uppercase font-serif'>
+      <div className='time-wrapper flex gap-1 px-1  py-5 text-md opacity-80 uppercase '>
         <span>Perú</span>
         <span className='ms-auto'>
           {limaTime}

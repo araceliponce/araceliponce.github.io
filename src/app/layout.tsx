@@ -1,9 +1,9 @@
-// import Layout from "@/components/layout";
 import "./globals.css";
 import type { Metadata } from "next";
-import { Roboto } from "next/font/google";
+import { Inter, Roboto } from "next/font/google";
+import { GoogleAnalytics } from '@next/third-parties/google'
 
-const roboto = Roboto({
+const roboto = Inter({
   subsets: ["latin"],
   weight: ["300", "400", "500", "700", "900"],
   display: "swap",
@@ -11,12 +11,9 @@ const roboto = Roboto({
 
 export const metadata: Metadata = {
   title: "Araceli Ponce Sanga | Desarrolladora Web | Perú",
-  description:
-    "We are thrilled to offer you a Free App Presentation Template, a beautifully designed and user-friendly Tailwind CSS and Material Tailwind theme crafted specifically for app developers like you. The free app presentation template includes key features such as hero, features, FAQ, stats, and testimonial sections.",
+  description: "Portafolio de desarrollo web.",
   keywords: "desarrollo web perú, desarrollo web tacna, "
 };
-
-// https://nextjs.org/docs/app/building-your-application/optimizing/metadata    metadata debe colocarse en server components, sea estatica o dinamica (ver opciones de Metadata)
 
 
 export default function RootLayout({
@@ -43,6 +40,8 @@ export default function RootLayout({
         {/* <div className="fixed bottom-3 right-3 backdrop-blur-lg py-2 px-5  is-round">
         
         </div> */}
+
+        <GoogleAnalytics gaId="G-MJRXW67S50" />
       </body>
     </html>
   );

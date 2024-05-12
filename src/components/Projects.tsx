@@ -60,11 +60,11 @@ const Article = ({ data }: dataProps) => {
   return (
     <article
 
-      className="article border border-gray-300 p-2 md:grid-cols-2 gap-3 "
+      className="article p-5 md:grid-cols-2 gap-3 "
     >
-      <figure className='relative'>
+      <figure className='relative rounded-md overflow-hidden'>
         {/* <Image width={400} height={400} src={data.image} className='' alt="" /> */}
-        <Image ratio={5 / 4} src={data.image} alt="screenshot" />
+        <Image loading="lazy" ratio={5 / 4} src={data.image} alt="screenshot" />
         <figcaption>
           <ul className='tags'>
             {data.tags && data.tags.map((tag, index) => (
@@ -103,19 +103,22 @@ const Article = ({ data }: dataProps) => {
 export default function Projects() {
   return (
     <section id='proyectos' className='px-5 '>
-      <Heading>Proyectos destacados</Heading>
-      <p className="subheading">
-        <span>Una selección de mis proyectos públicos del 2024.</span>
-      </p>
-      <div className="grid gap-5">
+      <div className="text-center">
+        <Heading>Proyectos destacados</Heading>
+        <p className="subheading">
+          <span>Una selección de mis proyectos públicos del 2024.</span>
+        </p>
+      </div>
+      <div className="grid gap-5 childs-outlined">
         {projects.map((project, index) => (
           <Article key={index} data={project} />
         ))}
       </div>
 
       <div className="pt-10 ">
-        <a href={gh} className="mx-auto grid-row btn-secondary">
-          Ver Github
+        <a href={gh} className="mx-auto w-fit btn-secondary rounded-md  duration-300  active:translate-y-1 active:scale-x-110 active:scale-y-90 flex items-center gap-2 p-2 px-5">
+          <span>Ver Github</span>
+          <Icon icon="ooui:link-external-ltr" />
         </a>
       </div>
 
