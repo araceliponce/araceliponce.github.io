@@ -102,7 +102,7 @@ const Article = ({ data }: dataProps) => {
 
 export default function Projects() {
   return (
-    <section id='proyectos' className='px-5 '>
+    <section id='proyectos' className=''>
       <div className="text-center">
         <Heading>Proyectos destacados</Heading>
         <p className="subheading">
