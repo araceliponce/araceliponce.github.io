@@ -827,7 +827,6 @@ header {
     display: inline-flex;
   }
 
-
   &::after {
     padding-inline: .7rem;
     color: white;
