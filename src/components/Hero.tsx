@@ -49,29 +49,6 @@ export default function Hero() {
           <div className="dx-text" data-separator="✦">
             <span>Disponible para nuevos proyectos</span>
           </div>
-          {/*   <div className="marquee-clasic overflow-x-hidden" aria-hidden={true}>
-            <div className="pt-3 pb-5 is-animated whitespace-nowrap ">
-              <ul className="flex justify-around">
-                <Tag icon='Figma' />
-                <Tag icon='CSS3' />
-                <Tag icon='React' />
-                <Tag icon='NextJS' />
-                <Tag icon='Vue' />
-                <Tag icon='TypeScript' />
-                <Tag icon='PHP' />
-              </ul>
-              <ul className="flex justify-around">
-                <Tag icon='Figma' />
-                <Tag icon='CSS3' />
-                <Tag icon='React' />
-                <Tag icon='NextJS' />
-                <Tag icon='Vue' />
-                <Tag icon='TypeScript' />
-                <Tag icon='PHP' />
-              </ul>
-            </div>
-          </div> */}
-
           <Marquee />
         </div>
       </div>
