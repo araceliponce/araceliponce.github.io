@@ -1,12 +1,13 @@
 import { li } from "@/definitions";
 import { Icon } from "@iconify/react";
 import { Tag } from "@a_r_a_c_e_l_i/library";
+import Marquee from "./Marquee";
 export default function Hero() {
   return (
     <section id="hero" className="relative ">
 
 
-      <div className=" bg-[#07939b] text-white hero-inner pt-[13rem]">
+      <div className=" bg-[#037b82] text-white hero-inner pt-[13rem]">
 
         <div className="flow">
           <h1 className="">Araceli Ponce Sanga </h1>
@@ -48,7 +49,7 @@ export default function Hero() {
           <div className="dx-text" data-separator="✦">
             <span>Disponible para nuevos proyectos</span>
           </div>
-          <div className="marquee-clasic overflow-x-hidden" aria-hidden={true}>
+          {/*   <div className="marquee-clasic overflow-x-hidden" aria-hidden={true}>
             <div className="pt-3 pb-5 is-animated whitespace-nowrap ">
               <ul className="flex justify-around">
                 <Tag icon='Figma' />
@@ -69,7 +70,9 @@ export default function Hero() {
                 <Tag icon='PHP' />
               </ul>
             </div>
-          </div>
+          </div> */}
+
+          <Marquee />
         </div>
       </div>
     </section>

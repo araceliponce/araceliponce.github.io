@@ -868,3 +868,42 @@ header {
   mask-repeat: no-repeat; */
   opacity: .6;
 }
+
+
+.animation-marquee,
+.animation-marquee2 {
+  --anim-duration: 20s;
+  color: var(--black);
+  display: inline-flex;
+  gap: .5rem;
+  padding-inline: .25rem;
+  font-size: 1.1rem;
+}
+
+.animation-marquee {
+  animation: marquee var(--anim-duration) linear infinite;
+}
+
+.animation-marquee2 {
+  animation: marquee2 var(--anim-duration) linear infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes marquee2 {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(0%);
+  }
+}
