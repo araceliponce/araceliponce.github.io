@@ -372,14 +372,14 @@ header {
   min-height: 100svh;
   display: grid;
   align-items: center;
-  padding-top: 3.3rem;
+  padding-top: 3.5rem;
   overflow: hidden;
 
   & .hero-inner {
     position: relative;
     border-radius: var(--radius);
     min-height: max(30rem, 80vh);
-    padding-top: 8rem;
+    padding-top: 10rem;
     padding-bottom: 10rem;
     padding-inline: min(2rem, 10vw);
     /* display: grid;
