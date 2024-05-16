@@ -368,15 +368,17 @@ header {
 
 /* :: hero section */
 #hero {
-  /* min-height: 100vh;
-  min-height: 100svh; */
+  min-height: 100vh;
+  min-height: 100svh;
+  display: grid;
+  align-items: center;
   padding-top: 4rem;
   overflow: hidden;
 
   & .hero-inner {
     border-radius: var(--radius);
     padding-top: 10rem;
-    padding-bottom: 6rem;
+    padding-bottom: 7rem;
     padding-inline: min(2rem, 10vw);
     display: grid;
     align-items: center;
@@ -735,35 +737,76 @@ header {
   left: 0;
   right: 0;
   bottom: 0;
-  padding-bottom: 2rem;
+  padding-bottom: 1rem;
+  /* background-color: pink; */
   /* transform: translate(0, -100%); */
 
   mask-image: linear-gradient(to right, transparent var(--stop1), tomato var(--stop2), tomato var(--stop3), transparent var(--stop4));
 
+
+  & .aps-tag {
+    display: inline-flex;
+    background-color: white;
+    box-shadow: 15px 0 25px -15px rgba(0, 0, 0, 0.8);
+  }
+
 }
+
+
+.marquee-clasic .is-animated {
+
+  display: flex;
+  animation: m-clasic 10s linear infinite;
+  transform: translateX(0%);
+  gap: .5rem;
+  color: #04747a;
+
+  &>ul {
+    gap: .5rem;
+    /* background-color: navy; */
+    min-width: 100%;
+    /* animation: m-clasic 10s linear infinite; */
+  }
+
+  &>ul:first-child {
+    /* background-color: gold; */
+  }
+
+  & li:nth-of-type(n+4) {
+    display: none;
+  }
+}
+
+@keyframes m-clasic {
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .marquee-clasic .is-animated {
+    & li:nth-of-type(n+4) {
+      display: inline-flex;
+    }
+  }
+}
+
 
 .dx-text {
   width: max-content;
   filter: url(#marquee);
-  animation: dx 4s linear infinite;
-  /* animation-play-state: paused; */
+  animation: dx 10s linear infinite;
+  translate: -100%;
+  font-size: .9rem;
+  text-transform: uppercase;
 
-  display: flex;
-  align-items: center;
-  /* gap: .5em; */
-
-  & .aps-tag {
-    background-color: white;
-    box-shadow: 15px 0 25px -15px rgba(0, 0, 0, 0.8);
-    margin-inline: .2rem;
+  &>* {
+    display: inline-flex;
   }
 
-  &.slower {
-    animation-duration: 10s;
-  }
 
   &::after {
-    padding-inline-start: .7rem;
+    padding-inline: .7rem;
     color: white;
     display: inline-block;
     content: attr(data-separator);
@@ -774,7 +817,7 @@ header {
 
 @keyframes dx {
   to {
-    translate: -100%
+    translate: 0%
   }
 }
 

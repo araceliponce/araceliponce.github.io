@@ -31,26 +31,45 @@ export default function Hero() {
 
           </div>
         </div>
-      </div>
 
 
 
 
 
-      <svg aria-hidden="true" width="0" height="0">
-        <filter id="marquee" primitiveUnits="objectBoundingBox" x="0" y="0" width="700%" height="100%">
-          <feTile width="1"></feTile>
-          <feTile></feTile>
-        </filter>
-      </svg>
 
-      <div className="marquee-container">
-        <div className="dx-text slower" data-separator="✦">
-          <Tag icon='Figma' />
-          <Tag icon='React' />
-          <Tag icon='PHP' />
-          <Tag icon='TypeScript' />
-          <Tag icon='CSS3' />
+        <svg aria-hidden="true" width="0" height="0">
+          <filter id="marquee" primitiveUnits="objectBoundingBox" x="0" y="0" width="700%" height="100%">
+            <feTile width="1"></feTile>
+            <feTile></feTile>
+          </filter>
+        </svg>
+
+        <div className="marquee-container">
+          <div className="dx-text" data-separator="✦">
+            <span>Disponible para nuevos proyectos</span>
+          </div>
+          <div className="marquee-clasic overflow-x-hidden" aria-hidden={true}>
+            <div className="pt-3 pb-5 is-animated whitespace-nowrap ">
+              <ul className="flex justify-around">
+                <Tag icon='Figma' />
+                <Tag icon='CSS3' />
+                <Tag icon='React' />
+                <Tag icon='NextJS' />
+                <Tag icon='Vue' />
+                <Tag icon='TypeScript' />
+                <Tag icon='PHP' />
+              </ul>
+              <ul className="flex justify-around">
+                <Tag icon='Figma' />
+                <Tag icon='CSS3' />
+                <Tag icon='React' />
+                <Tag icon='NextJS' />
+                <Tag icon='Vue' />
+                <Tag icon='TypeScript' />
+                <Tag icon='PHP' />
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
     </section>
