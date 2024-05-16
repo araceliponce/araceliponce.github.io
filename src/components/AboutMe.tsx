@@ -8,7 +8,7 @@ import { Icon } from "@iconify/react";
 
 export default function AboutMe() {
   return (
-    <section id="acerca-de-mi">
+    <section id="acerca-de-mi" className="pb-20">
       <div className="contained">
         <div className="text-center mx-auto pb-10">
           <Heading>

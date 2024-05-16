@@ -14,6 +14,7 @@ export default function Page() {
     <>
 
       <div className="may-layout text-blue-gray-800">
+        <div className="dots"></div>
         <div id="sidebar">
           <ApSidebar />
         </div>

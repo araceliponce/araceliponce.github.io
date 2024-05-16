@@ -61,7 +61,8 @@ export default function Header() {
 
     <header
 
-      className={`fixed lg:sticky top-0 right-0 left-0 z-50 pt-2 transition-colors `}
+      className={`fixed lg:sticky top-0 right-0 left-0 z-50 `}
+      style={{ height: '0' }}
     >
       {/* <div className={`
        contained mx-auto px-2 py-1 h-[3rem]  rounded-md flex items-center justify-between transition-colors
@@ -114,7 +115,7 @@ export default function Header() {
             <NavItem href="#acerca-de-mi">Acerca de mí</NavItem>
             <li>
               <div className="flex flex-wrap gap-3">
-                <Tag icon='LinkedIn' href="https://www.linkedin.com/in/araceliponcesanga">
+                <Tag icon='LinkedIn' className="" href="https://www.linkedin.com/in/araceliponcesanga">
                   <span className="sr-only">araceliponcesanga</span>
                 </Tag>
                 <Tag icon='Github' href="https://www.linkedin.com/in/araceliponcesanga">

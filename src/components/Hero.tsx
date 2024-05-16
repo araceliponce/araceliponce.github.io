@@ -1,5 +1,6 @@
 import { li } from "@/definitions";
 import { Icon } from "@iconify/react";
+import { Tag } from "@a_r_a_c_e_l_i/library";
 export default function Hero() {
   return (
     <section id="hero" className="relative ">
@@ -28,14 +29,30 @@ export default function Hero() {
               <Icon icon="ooui:link-external-ltr" />
             </a>
 
-
-
           </div>
         </div>
       </div>
 
 
 
+
+
+      <svg aria-hidden="true" width="0" height="0">
+        <filter id="marquee" primitiveUnits="objectBoundingBox" x="0" y="0" width="700%" height="100%">
+          <feTile width="1"></feTile>
+          <feTile></feTile>
+        </filter>
+      </svg>
+
+      <div className="marquee-container">
+        <div className="dx-text slower" data-separator="✦">
+          <Tag icon='Figma' />
+          <Tag icon='React' />
+          <Tag icon='PHP' />
+          <Tag icon='TypeScript' />
+          <Tag icon='CSS3' />
+        </div>
+      </div>
     </section>
   );
 }
