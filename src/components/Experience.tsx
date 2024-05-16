@@ -15,7 +15,7 @@ export default function Experience() {
           </p>
         </div>
 
-        <ol className='lg:px-3 pt-8 grid gap-[3rem] *:p-5 childs-outlined'>
+        <ol className='lg:px-3 pt-5 grid gap-[3rem] *:p-5 childs-outlined'>
           <li className="outlined">
             <div className='grid md:grid-cols-[1fr,2fr] gap-4'>
               <div>
@@ -29,7 +29,7 @@ export default function Experience() {
                   Diseñé componentes y planteé flujos de usuario, en Figma.
                 </li>
                 <li>
-                  Desarrollé la librería interna de componentes desde cero, con React, Typescript y CCS en JS.
+                  Desarrollé la librería interna de componentes desde cero, con React, Typescript y CSS en JS.
                 </li>
                 <li>Creación de componente tabla con funcionalidades de sorting y transformación de valores (strings, números, etc.) en fragmentos (checkboxes, botones, etc.) .</li>
                 <li>Creación de componentes como breadcrumbs automáticos y tooltips, y más.</li>

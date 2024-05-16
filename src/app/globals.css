@@ -58,7 +58,8 @@ html:focus-within {
 
 @media screen and (min-width: 960px) {
   .may-layout {
-    grid-template-columns: 30ch 1fr;
+    grid-template-columns: 27ch 1fr;
+    /* grid-template-columns: 25ch minmax(50ch, 700px); */
   }
 }
 
