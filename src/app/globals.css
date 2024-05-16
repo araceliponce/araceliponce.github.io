@@ -17,7 +17,7 @@
   }
 
   .subheading {
-    @apply block antialiased font-sans font-normal leading-relaxed text-inherit text-gray-800 pb-10
+    @apply block antialiased font-sans font-normal leading-relaxed text-inherit text-gray-800 pb-6
   }
 
   body {
@@ -372,16 +372,18 @@ header {
   min-height: 100svh;
   display: grid;
   align-items: center;
-  padding-top: 4rem;
+  padding-top: 3.3rem;
   overflow: hidden;
 
   & .hero-inner {
+    position: relative;
     border-radius: var(--radius);
-    padding-top: 10rem;
-    padding-bottom: 7rem;
+    min-height: max(30rem, 80vh);
+    padding-top: 8rem;
+    padding-bottom: 10rem;
     padding-inline: min(2rem, 10vw);
-    display: grid;
-    align-items: center;
+    /* display: grid;
+    align-items: center; */
 
     /* background-image: url('/duotone.png');
     background-size: cover;
@@ -396,6 +398,11 @@ header {
 
 }
 
+@media screen and (min-width: 960px) {
+  #hero {
+    padding-top: 4rem;
+  }
+}
 
 
 /* :: projects section */
@@ -750,6 +757,7 @@ header {
     box-shadow: 15px 0 25px -15px rgba(0, 0, 0, 0.8);
   }
 
+
 }
 
 
@@ -760,6 +768,8 @@ header {
   transform: translateX(0%);
   gap: .5rem;
   color: #04747a;
+  pointer-events: none;
+  user-select: none;
 
   &>ul {
     gap: .5rem;
@@ -775,6 +785,16 @@ header {
   & li:nth-of-type(n+4) {
     display: none;
   }
+
+
+  &:hover {
+    animation-play-state: paused;
+  }
+
+  & .aps-tag {
+    pointer-events: all;
+    transition: all .2s ease;
+  }
 }
 
 @keyframes m-clasic {
@@ -785,6 +805,9 @@ header {
 
 @media screen and (min-width: 768px) {
   .marquee-clasic .is-animated {
+    /* animation: m-clasic 12s linear infinite; */
+    animation-duration: 12s;
+
     & li:nth-of-type(n+4) {
       display: inline-flex;
     }

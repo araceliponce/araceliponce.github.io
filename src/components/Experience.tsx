@@ -11,11 +11,11 @@ export default function Experience() {
         <div className="text-center">
           <Heading>Experiencia Laboral</Heading>
           <p className="subheading">
-            <span>¿En qué he trabajado ultimamente?</span>
+            <span>¿En qué he trabajado este año?</span>
           </p>
         </div>
 
-        <ol className='lg:px-3 grid gap-[3rem] *:p-5 childs-outlined'>
+        <ol className='lg:px-3 pt-8 grid gap-[3rem] *:p-5 childs-outlined'>
           <li className="outlined">
             <div className='grid md:grid-cols-[1fr,2fr] gap-4'>
               <div>
