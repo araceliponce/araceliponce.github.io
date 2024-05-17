@@ -14,13 +14,17 @@ export default function Page() {
     <>
 
       <div className="may-layout text-blue-gray-800">
-        <div className="dots"></div>
-        <div id="sidebar">
+
+
+        <div id="sidebar" className="relative">
+
           <ApSidebar />
         </div>
         <div id="main">
+
           <Header />
           <main>
+
             <Hero />
 
             {/* <FirstCard /> */}

@@ -61,7 +61,7 @@ export default function Header() {
 
     <header
 
-      className={`fixed lg:sticky top-0 right-0 left-0 z-50 `}
+      className={`fixed top-0 right-0 left-0 z-50 `}
       style={{ height: '0' }}
     >
       {/* <div className={`
@@ -94,15 +94,6 @@ export default function Header() {
             <Icon icon="material-symbols:menu" />
           )}
         </button>
-        <div className="desktop-items hidden lg:flex gap-2 text-sm">
-
-          <Tag icon='LinkedIn' href={li}>
-            <span className="">araceliponcesanga</span>
-          </Tag>
-          <Tag icon='Github' href={gh}>
-            <span className="">araceliponce</span>
-          </Tag>
-        </div>
 
       </div>
       <Collapse open={open} className={open ? "block" : "hidden"}>
@@ -115,11 +106,13 @@ export default function Header() {
             <NavItem href="#acerca-de-mi">Acerca de mí</NavItem>
             <li>
               <div className="flex flex-wrap gap-3">
-                <Tag icon='LinkedIn' className="" href="https://www.linkedin.com/in/araceliponcesanga">
-                  <span className="sr-only">araceliponcesanga</span>
+                <Tag icon='LinkedIn' className="" href={li}>
+                  <span className="">araceliponcesanga</span>
+                  <Icon icon="ooui:link-external-ltr" />
                 </Tag>
-                <Tag icon='Github' href="https://www.linkedin.com/in/araceliponcesanga">
-                  <span className="sr-only">araceliponcesanga</span>
+                <Tag icon='Github' href={gh}>
+                  <span className="">araceliponce</span>
+                  <Icon icon="ooui:link-external-ltr" />
                 </Tag>
 
               </div>

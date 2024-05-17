@@ -73,6 +73,8 @@ html:focus-within {
     display: grid;
     height: 100vh;
     height: 100svh;
+    align-items: end;
+    align-items: center;
     position: -webkit-sticky;
     position: sticky;
     top: 0;
@@ -83,35 +85,34 @@ html:focus-within {
 
     padding: 1.5rem;
 
-    & a,
-    .intro,
-    .time-wrapper {
-      animation: move-up 1.5s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
-      animation-delay: .3s;
+    /* animacion en los  li, porque los a tienen otra animacion */
+    & li {
+      animation: move-up-small .9s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+      transform: translateY(10px);
       opacity: 0;
+      /* filter: blur(.5rem); */
     }
 
-    & .time-wrapper {
-      animation-delay: .4s;
-    }
 
-    & li:nth-of-type(1) a {
-      animation-delay: .5s;
-    }
-
-    & li:nth-of-type(2) a {
-      animation-delay: .6s;
-    }
-
-    & li:nth-of-type(3) a {
+    & li:nth-of-type(1) {
       animation-delay: .7s;
     }
 
-    & li:nth-of-type(4) a {
+    & li:nth-of-type(2) {
+      animation-delay: .75s;
+    }
+
+    & li:nth-of-type(3) {
       animation-delay: .8s;
     }
 
-    /* padding-top: 4rem; */
+    & li:nth-of-type(4) {
+      animation-delay: .85s;
+    }
+
+    & li:nth-of-type(5) {
+      /* animation-delay: .55s; */
+    }
   }
 }
 
@@ -144,8 +145,16 @@ img {
 
 /* ::typography */
 h1 {
-  font-size: clamp(2rem, 10vw, 5rem);
+  font-size: clamp(5rem, 10vw + 10px, 6rem);
   line-height: .8;
+  font-weight: 500;
+
+  &+p {
+    font-size: clamp(1.3rem, 3vw + 10px, 2.5rem);
+    padding-top: .5em;
+    padding-bottom: .5em;
+    /* line-height: .8; */
+  }
 }
 
 h2 {
@@ -218,55 +227,69 @@ a {
   --shadow: var(--ghost);
 
   padding-inline: 1.5em;
-  background-color: var(--white);
-  color: var(--green);
+  background-color: var(--green);
+  color: white;
+  /* outline: 2px solid var(--green); */
+  min-height: 3rem;
   font-weight: 500;
-  /* font-weight: bold; */
+  letter-spacing: .03em;
   padding-inline: 2rem;
 
-  overflow: hidden;
 
-  box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgb(170, 169, 169) 0px 4px 9px -4px;
-
-
-  outline: 2px solid var(--white);
 
   &:hover {
     outline-color: gold;
 
+    /* x(+ -)   y(+ -)  blur(+)   spread (- +) */
+    /* box-shadow: 0 10px 15px -10px rgba(136, 250, 70, 0.4); */
+
   }
 }
 
-.btn-outlined {
-  outline: 2px solid var(--ghost);
+
+
+
+.btn-secondary {
+  background-color: inherit;
+  background-color: rgba(255, 255, 255, 0.541);
+
+  outline: 1px solid rgb(141, 167, 252);
+  color: rgb(41, 74, 173);
+
+  min-height: 3rem;
+  box-shadow: 0 20px 50px -10px white;
+
+  &.bg-white {
+    background-color: rgba(255, 255, 255, 0.541);
+    /* background-color: var(--g; */
+  }
 
   &:hover {
-    outline-color: currentColor;
+
+    background-color: white;
+    outline: 1.5px solid rgb(73, 113, 247);
+    color: rgb(3, 35, 131);
   }
+
 }
+
+
+
 
 .btn-primary {
 
   background-color: var(--green);
   color: white;
+  min-height: 3rem;
   font-weight: 500;
   letter-spacing: -.5px;
   line-height: 1.2;
-  outline: 2px solid transparent;
+  outline: 2px solid var(--green);
 
 
 
   &:hover {
     outline-color: gold;
-  }
-}
-
-.btn-secondary {
-  background-color: white;
-  outline: 1px solid currentColor;
-
-  &:hover {
-    outline: 2px solid currentColor;
   }
 }
 
@@ -312,6 +335,8 @@ a {
 
 body {
   background-color: var(--white);
+
+  background-image: linear-gradient(to bottom, #ffffff, #fcfbfe, #faf7fd, #f9f3fc, #f8eefa, #f4eefc, #efeefe, #eaeeff, #def3ff, #d2f9ff, #cefdf8, #d6ffe8);
 }
 
 
@@ -337,8 +362,9 @@ header {
 section,
 footer {
   position: relative;
-  background-color: var(--white);
-  box-shadow: 50vw 0 0 0 var(--white);
+
+  /* background-color: var(--white); */
+  /* box-shadow: 50vw 0 0 0 var(--white); */
   padding-block: 3rem;
 }
 
@@ -351,39 +377,33 @@ header {
   .mobile-nav {
     background-color: var(--ghoster);
     backdrop-filter: blur(10rem);
-    /* border-radius: var(--radius);
-    border-top-left-radius: 0;
-    border-top-right-radius: 0; */
     border-radius: var(--round-on-bottom);
   }
 
   & .header-inner {
     /* animacion duracion delay ... */
-    animation: move-down 1.5s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+    animation: appear 1.5s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+    padding: 0
   }
 
   & .logo {
-    border-radius: 100vh;
+    /* border-radius: 100vh; */
+    height: 3rem;
+    width: 3rem;
+    display: grid;
+    place-content: center;
     /* background-color: var(--bg-item); */
   }
 
-  & .aps-tag {
-    border-radius: .5rem;
-    padding-block: .7em;
-    background-color: transparent !important;
-    text-decoration: underline;
-    border-radius: var(--round-on-bottom);
-  }
-
-
   & .aps-tag:hover,
-  .logo:hover {
+  .logo:hover,
+  button:hover {
     outline: 1px solid var(--green);
   }
 
   & button {
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 3rem;
+    height: 3rem;
     display: grid;
     place-content: center;
   }
@@ -414,8 +434,8 @@ header {
     position: relative;
     border-radius: var(--radius);
     min-height: max(30rem, 80vh);
-    padding-top: 10rem;
-    padding-bottom: 10rem;
+    padding-top: 6rem;
+    padding-bottom: 8rem;
     padding-inline: min(2rem, 10vw);
     /* display: grid;
     align-items: center; */
@@ -425,7 +445,27 @@ header {
     background-repeat: no-repeat;
     background-position: bottom;
     box-shadow: 0 10px 40px -10px rgba(40, 88, 86, 0.445); */
-    animation: move-up 1.5s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+    /* animation: appear 1s cubic-bezier(0.25, 0.1, 0.25, 1) forwards; */
+  }
+
+  & .email,
+  .linkedin {
+
+    animation: move-up-small 1s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+    transform: translateY(10px);
+    opacity: 0;
+  }
+
+  & .email {
+    animation-delay: .5s;
+  }
+
+  & a[href*="linkedin"] {
+    animation-delay: .8s;
+  }
+
+  a[href$='.pdf'] {
+    color: tomato;
   }
 
   & a {
@@ -435,6 +475,10 @@ header {
 }
 
 @media screen and (min-width: 960px) {
+  header {
+    display: none;
+  }
+
   #hero {
     padding-top: 4rem;
   }
@@ -445,35 +489,61 @@ header {
 @keyframes move-up {
   0% {
     transform: translateY(70px);
-    opacity: 0;
+    /* opacity: 0; */
   }
 
   70% {
     transform: translateY(-15px);
+    filter: blur(0);
   }
 
   100% {
     transform: translateY(0);
     opacity: 1;
+    filter: blur(0);
+  }
+}
+
+@keyframes move-up-small {
+
+  70% {
+    transform: translateY(-5px);
+    filter: blur(0);
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+    filter: blur(0);
   }
 }
 
 @keyframes move-down {
   0% {
     transform: translateY(-20px);
-    /* opacity: 0 !important; */
-    filter: blur(10rem);
   }
 
 
   70% {
     transform: translateY(-20px);
-    /* opacity: 1; */
     filter: blur(0);
   }
 
   100% {
     transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+    filter: blur(1rem);
+  }
+
+  100% {
+    opacity: 1;
+    filter: blur(0);
   }
 }
 
@@ -503,11 +573,13 @@ header {
 
   font-family: 'Times New Roman', Times, serif;
   padding-left: var(--spacer);
-  color: #64fac8;
+  /* color: #64fac8; */
+  color: white;
+  /* color: rgba(255, 255, 255, 0.8); */
   font-weight: bold;
 
   letter-spacing: -.05em;
-  opacity: .5;
+
 }
 
 
@@ -816,17 +888,18 @@ header {
   left: 0;
   right: 0;
   bottom: 0;
-  padding-bottom: 1rem;
+  padding-bottom: 2rem;
   /* background-color: pink; */
   /* transform: translate(0, -100%); */
 
   mask-image: linear-gradient(to right, transparent var(--stop1), tomato var(--stop2), tomato var(--stop3), transparent var(--stop4));
 
+  animation: appear 1.5s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
 
   & .aps-tag {
     display: inline-flex;
     background-color: white;
-    box-shadow: 15px 0 25px -15px rgba(0, 0, 0, 0.8);
+    box-shadow: 5px 5px 11px -15px rgba(0, 0, 0, 0.8);
   }
 }
 
@@ -867,23 +940,36 @@ header {
 }
 
 .dots {
-  content: '';
-  position: fixed;
-  inset: 0;
-  height: 100vh;
+  --white: white;
+
+  /* si fuese fixed el mask de elipse aplicaria a bgs del body tambien */
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+
+    z-index: -1;
+    background: linear-gradient(90deg, var(--white) 15px, transparent 1%) 50%, linear-gradient(var(--white) 15px, transparent 1%) 50%, var(--bg-dot);
+    background-size: 17px 17px;
+
+    /* mask-image: radial-gradient(ellipse 80% 50% at 50% 0%, transparent 90%, tomato 100%), radial-gradient(ellipse 80% 50% at 50% 0%, transparent 90%, tomato 100%); */
 
 
-  z-index: -1;
-  background: linear-gradient(90deg, var(--bg-pure) 15px, transparent 1%) 50%, linear-gradient(var(--bg-pure) 15px, transparent 1%) 50%, var(--bg-dot);
-  background-size: 17px 17px;
+    mask-image: linear-gradient(90deg, transparent 10%, tomato);
 
-  mask-image: radial-gradient(ellipse 80% 50% at 50% 0%, transparent 90%, tomato 100%), radial-gradient(ellipse 80% 50% at 50% 0%, transparent 90%, tomato 100%);
-  /* mask-image: radial-gradient(ellipse 80% 50% at 0% 100%, transparent 90%, tomato 100%), radial-gradient(ellipse 80% 50% at 100% 0%, transparent 90%, tomato 100%);
-  mask-position: bottom left, top right;
-  mask-repeat: no-repeat; */
-  opacity: .6;
+    opacity: .6;
+  }
+
 }
 
+.gradient {
+  /* content: ''; */
+  position: fixed;
+  inset: 0;
+  height: 110vh;
+  /* background-color: pink; */
+  background-image: linear-gradient(white 60%, transparent);
+}
 
 .animation-marquee,
 .animation-marquee2 {

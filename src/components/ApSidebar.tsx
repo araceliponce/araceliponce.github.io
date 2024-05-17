@@ -1,7 +1,8 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
-
-
+import { Tag } from '@a_r_a_c_e_l_i/library';
+import { gh, li } from '@/definitions';
+import { Icon } from '@iconify/react';
 
 export function getLimaTime() {
   const limaOffset = -5; // Lima (UTC-5)
@@ -16,20 +17,20 @@ export default function ApSidebar() {
 
 
 
-  const [limaTime, setLimaTime] = useState('');
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setLimaTime(getLimaTime());
-    }, 1000);
+  // const [limaTime, setLimaTime] = useState('');
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     setLimaTime(getLimaTime());
+  //   }, 1000);
 
-    return () => clearInterval(interval);
-  }, []);
+  //   return () => clearInterval(interval);
+  // }, []);
 
 
 
   return (
     <aside className='sidebar align-content-start p-3 outlined text-md leading-tight'>
-
+      {/* 
       <div className="intro pt-2 px-1">
         <p className='text-lg leading-tight pb-2'>Portafolio de Araceli Ponce Sanga</p>
       </div>
@@ -39,38 +40,40 @@ export default function ApSidebar() {
         <span className='ms-auto'>
           {limaTime}
         </span>
-      </div>
+      </div> */}
 
       <nav className='pt-5'>
         <ol className='grid gap-2'>
           <li className="list-sidebar-item ">
 
-            <a href="#experiencia" className="btn-cta w-100 has-noise rounded-md  duration-300  active:translate-y-1 active:scale-x-110 active:scale-y-90 flex items-center gap-2 p-5">
+            <a href="#experiencia" className="btn-secondary bg-white w-100 has-noise rounded-md  duration-300  active:translate-y-1 active:scale-x-110 active:scale-y-90 flex items-center gap-2 p-5">
               <span className="text-xl" aria-hidden={true}>✦</span>
               <span>Experiencia</span>
             </a>
 
           </li>
           <li className="list-sidebar-item ">
-            <a href="#proyectos" className="btn-cta w-100 has-noise rounded-md  duration-300  active:translate-y-1 active:scale-x-110 active:scale-y-90 flex items-center gap-2 p-5">
+            <a href="#proyectos" className="btn-secondary bg-white w-100 has-noise rounded-md  duration-300  active:translate-y-1 active:scale-x-110 active:scale-y-90 flex items-center gap-2 p-5">
               <span className="text-xl" aria-hidden={true}>✦</span>
               <span>Proyectos</span>
             </a>
           </li>
 
           <li className="list-sidebar-item ">
-            <a href="#habilidades" className="btn-cta w-100 has-noise rounded-md  duration-300  active:translate-y-1 active:scale-x-110 active:scale-y-90 flex items-center gap-2 p-5">
+            <a href="#habilidades" className="btn-secondary bg-white w-100 has-noise rounded-md  duration-300  active:translate-y-1 active:scale-x-110 active:scale-y-90 flex items-center gap-2 p-5">
               <span className="text-xl" aria-hidden={true}>✦</span>
               <span>Habilidades</span>
             </a>
 
           </li>
           <li className="list-sidebar-item ">
-            <a href="#acerca-de-mi" className="btn-cta w-100 has-noise rounded-md  duration-300  active:translate-y-1 active:scale-x-110 active:scale-y-90 flex items-center gap-2 p-5">
+            <a href="#acerca-de-mi" className="btn-secondary bg-white w-100 has-noise rounded-md  duration-300  active:translate-y-1 active:scale-x-110 active:scale-y-90 flex items-center gap-2 p-5">
               <span className="text-xl" aria-hidden={true}>✦</span>
               <span>Acerca de mí</span>
             </a>
           </li>
+
+
         </ol>
       </nav>
 
