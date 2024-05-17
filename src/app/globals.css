@@ -877,6 +877,11 @@ header {
 }
 
 
+.marquee-container,
+h1,
+h1+p {
+  animation: appear 1.5s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+}
 
 .marquee-container {
 
@@ -894,7 +899,7 @@ header {
 
   mask-image: linear-gradient(to right, transparent var(--stop1), tomato var(--stop2), tomato var(--stop3), transparent var(--stop4));
 
-  animation: appear 1.5s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+
 
   & .aps-tag {
     display: inline-flex;
