@@ -33,6 +33,7 @@ export default function Page() {
 
             <Projects />
 
+
             <Skills />
 
             <AboutMe />

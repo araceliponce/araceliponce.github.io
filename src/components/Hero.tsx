@@ -12,8 +12,9 @@ export default function Hero() {
         <div className="flow">
           <h1 className="">Araceli Ponce Sanga </h1>
           <p className="">Desarrolladora web</p>
+          <span className="availability">Disponible para nuevos trabajos</span>
 
-          <div className="flex-group w-fit gap-4 pt-4">
+          <div className="flex-group w-fit gap-4 pt-10">
             <div className="text-center email">
               <a href="mailto:aponcesanga@gmail.com" className="mx-auto w-fit btn-cta rounded-md  duration-300  active:translate-y-1 active:scale-x-110 active:scale-y-90 flex items-center justify-center gap-2 p-2 px-5">
                 <span>Contactar</span>

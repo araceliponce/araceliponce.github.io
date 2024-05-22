@@ -88,7 +88,7 @@ html:focus-within {
     /* animacion en los  li, porque los a tienen otra animacion */
     & li {
       animation: move-up-small .9s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
-      transform: translateY(10px);
+      /* transform: translateY(10px); */
       opacity: 0;
       /* filter: blur(.5rem); */
     }
@@ -148,17 +148,31 @@ h1 {
   font-size: clamp(5rem, 10vw + 10px, 6rem);
   line-height: .8;
   font-weight: 500;
+  padding-bottom: .2em;
 
   &+p {
+    display: inline-block;
     font-size: clamp(1.3rem, 3vw + 10px, 2.5rem);
-    padding-top: .5em;
-    padding-bottom: .5em;
-    /* line-height: .8; */
+
+    padding: .1rem .5rem;
+
+    background-color: rgb(250, 142, 1);
+    color: white;
+    box-shadow: var(--shadow-no-btn);
+    border-radius: 5rem;
+    font-size: .9rem;
+    font-weight: 500;
+    letter-spacing: .05em;
+
+    width: fit-content;
+    margin-top: .5rem;
+    margin-inline-end: .5em;
   }
 }
 
 h2 {
   font-size: clamp(1.7rem, 3vw, 4rem);
+  font-weight: 500;
 }
 
 .subheading {
@@ -322,6 +336,8 @@ a {
   /* usar : -7rem  no funciona */
 
   --round-on-bottom: 0 0 var(--radius) var(--radius);
+
+  --shadow-no-btn: 5px 5px 11px -15px rgba(0, 0, 0, 0.8);
 }
 
 .bg-ghost {
@@ -331,6 +347,7 @@ a {
 }
 
 /* :: sections */
+
 
 
 body {
@@ -378,6 +395,10 @@ header {
     background-color: var(--ghoster);
     backdrop-filter: blur(10rem);
     border-radius: var(--round-on-bottom);
+  }
+
+  & .mobile-nav {
+    border-radius: var(--radius);
   }
 
   & .header-inner {
@@ -436,7 +457,6 @@ header {
     min-height: max(30rem, 80vh);
     padding-top: 6rem;
     padding-bottom: 8rem;
-    padding-inline: min(2rem, 10vw);
     /* display: grid;
     align-items: center; */
 
@@ -452,7 +472,7 @@ header {
   .linkedin {
 
     animation: move-up-small 1s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
-    transform: translateY(10px);
+    /* transform: translateY(10px); */
     opacity: 0;
   }
 
@@ -472,7 +492,69 @@ header {
     font-size: 1.1rem;
   }
 
+
 }
+
+
+
+.availability {
+  font-weight: 400;
+  position: relative;
+  display: inline-block;
+  letter-spacing: .05em;
+  scale: .95;
+  margin-top: .8rem;
+}
+
+.availability::before,
+.availability::after {
+  content: '✦';
+  position: absolute;
+  inset: 0;
+  font-size: 1.3em;
+  transform: translate(0%, 60%);
+  opacity: 0;
+  animation: rotate 6s linear infinite;
+
+  color: orange;
+  text-align: center;
+}
+
+.availability::after {
+  animation-delay: 3s;
+  color: seagreen;
+}
+
+@keyframes rotate {
+
+  /* x centro, y abajo */
+  0% {
+    transform: translate(0%, 60%);
+  }
+
+  25% {
+    transform: translate(50%, -30%);
+  }
+
+  /* x centro, y arriba */
+  50% {
+    transform: translate(0%, -70%);
+  }
+
+  75% {
+    transform: translate(-50%, -30%);
+  }
+
+  /* antes de llegar a las esquinas, pierde opacidad */
+  /* 0%, */
+  20%,
+  70% {
+    opacity: .7;
+  }
+
+}
+
+
 
 @media screen and (min-width: 960px) {
   header {
@@ -485,55 +567,38 @@ header {
 }
 
 
-/* empieza abajo, va mas arriba, va a posicion 0 */
-@keyframes move-up {
-  0% {
-    transform: translateY(70px);
-    /* opacity: 0; */
-  }
 
-  70% {
-    transform: translateY(-15px);
-    filter: blur(0);
-  }
-
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-    filter: blur(0);
-  }
-}
+/* empieza en 0, va arriba en 60% y rebota */
 
 @keyframes move-up-small {
 
-  70% {
-    transform: translateY(-5px);
-    filter: blur(0);
+  60% {
+    transform: translateY(-15px);
+    animation-timing-function: ease-in;
+    opacity: .5;
   }
 
-  100% {
+  80% {
     transform: translateY(0);
+    /* background-color: pink; */
+    opacity: .8;
+  }
+
+  90% {
+    transform: translateY(-10px);
+    /* background-color: orange; */
+    animation-timing-function: ease-out;
     opacity: 1;
-    filter: blur(0);
-  }
-}
-
-@keyframes move-down {
-  0% {
-    transform: translateY(-20px);
-  }
-
-
-  70% {
-    transform: translateY(-20px);
-    filter: blur(0);
   }
 
   100% {
     transform: translateY(0);
-    filter: blur(0);
+    /* background-color: violet; */
+    animation-timing-function: ease-out;
+    opacity: 1;
   }
 }
+
 
 @keyframes appear {
   0% {
@@ -879,7 +944,8 @@ header {
 
 .marquee-container,
 h1,
-h1+p {
+h1+p,
+.availability {
   animation: appear 1.5s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
 }
 
@@ -904,7 +970,7 @@ h1+p {
   & .aps-tag {
     display: inline-flex;
     background-color: white;
-    box-shadow: 5px 5px 11px -15px rgba(0, 0, 0, 0.8);
+    box-shadow: var(--shadow-no-btn);
   }
 }
 

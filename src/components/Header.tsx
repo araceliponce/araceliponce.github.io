@@ -97,7 +97,7 @@ export default function Header() {
 
       </div>
       <Collapse open={open} className={open ? "block" : "hidden"}>
-        <div className="contained mx-auto mt-2 rounded-lg border mobile-nav px-6 py-5">
+        <div className="contained mx-auto mt-0 mobile-nav px-6 py-5">
           <ul className="flex flex-col gap-2 text-blue-gray-900">
             <NavItem href="#">Inicio</NavItem>
             <NavItem href="#experiencia">Experiencia</NavItem>
