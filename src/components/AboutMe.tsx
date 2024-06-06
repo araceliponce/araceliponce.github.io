@@ -14,9 +14,9 @@ export default function AboutMe() {
           <Heading>
             Acerca de mí
           </Heading>
-          <p className="subheading">
+          <p>
             ¿Quién soy?¿Dónde he estudiado?
-            <br /> Y otras preguntas frecuentes de entrevistas.
+            <br /> Y otras preguntas frecuentes.
           </p>
         </div>
 

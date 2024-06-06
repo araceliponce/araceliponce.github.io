@@ -4,13 +4,14 @@ import { Heading } from '@a_r_a_c_e_l_i/library'
 import { Tag } from '@a_r_a_c_e_l_i/library'
 import { li } from '@/definitions'
 import { Icon } from '@iconify/react'
+import { Magnetic } from './Magnetic'
 export default function Experience() {
   return (
     <section id="experiencia" className=''>
       <div>
         <div className="text-center">
           <Heading>Experiencia Laboral</Heading>
-          <p className="subheading">
+          <p>
             <span>¿En qué he trabajado este año?</span>
           </p>
         </div>
@@ -89,10 +90,12 @@ export default function Experience() {
         </ol>
 
         <div className="pt-10 ">
-          <a href={li} className="mx-auto w-fit btn-secondary rounded-md  duration-300  active:translate-y-1 active:scale-x-110 active:scale-y-90 flex items-center gap-2 p-2 px-5">
-            <span>Ver LinkedIn</span>
-            <Icon icon="ooui:link-external-ltr" />
-          </a>
+          <Magnetic>
+            <a href={li} className="mx-auto w-fit btn-secondary rounded-md  duration-300  active:translate-y-1 active:scale-x-110 active:scale-y-90 flex items-center gap-2 p-2 px-5">
+              <span>Ver LinkedIn</span>
+              <Icon icon="ooui:link-external-ltr" />
+            </a>
+          </Magnetic>
         </div>
 
       </div>

@@ -82,7 +82,7 @@ export default function Header() {
 
         <button
           onClick={handleOpen}
-          className="ml-auto grid rounded-md lg:hidden bg-white"
+          className="ml-auto grid rounded-md lg:hidden "
         >
           <span className="sr-only">Abrir navegación</span>
 
@@ -98,7 +98,7 @@ export default function Header() {
       </div>
       <Collapse open={open} className={open ? "block" : "hidden"}>
         <div className="contained mx-auto mt-0 mobile-nav px-6 py-5">
-          <ul className="flex flex-col gap-2 text-blue-gray-900">
+          <ul className="flex flex-col gap-2">
             <NavItem href="#">Inicio</NavItem>
             <NavItem href="#experiencia">Experiencia</NavItem>
             <NavItem href="#proyectos">Proyectos</NavItem>

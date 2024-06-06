@@ -13,7 +13,7 @@ export default function Page() {
   return (
     <>
 
-      <div className="may-layout text-blue-gray-800">
+      <div className="may-layout">
 
 
         <div id="sidebar" className="relative">

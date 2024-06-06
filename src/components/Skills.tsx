@@ -13,16 +13,14 @@ export default function Skills() {
       <div className="text-center">
 
         <Heading>Habilidades</Heading>
-        <p className="subheading">
+        <p>
           <span>Principales habilidades como desarrolladora.</span>
         </p>
-
-
 
         <div className="pt-[3rem] grid gap-[4rem] md:gap-5 md:grid-cols-2  childs-outlined">
 
           <div className="pt-0">
-            <div className="mx-auto grid place-content-center text-[1.5rem] rounded-md h-[4rem] w-[4rem] -translate-y-8 bg-white text-[#50c49d] border">
+            <div className="mx-auto grid place-content-center text-[1.5rem] rounded-md h-[4rem] w-[4rem] -translate-y-8 bg-white border">
               <Icon icon="mynaui:click" />
             </div>
             <p className='heading-card -translate-y-3'><b>Diseño UX/UI</b></p>
@@ -34,7 +32,7 @@ export default function Skills() {
 
           </div>
           <div className="pt-0">
-            <div className="mx-auto grid place-content-center text-[1.5rem] rounded-md h-[4rem] w-[4rem] -translate-y-8 bg-white text-[#50c49d] border">
+            <div className="mx-auto grid place-content-center text-[1.5rem] rounded-md h-[4rem] w-[4rem] -translate-y-8 bg-white border">
               <Icon icon="mynaui:code-square" />
             </div>
             <p className='heading-card -translate-y-3'><b>Desarrollo FrontEnd</b></p>

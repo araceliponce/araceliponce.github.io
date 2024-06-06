@@ -8,6 +8,7 @@ import { Tag } from '@a_r_a_c_e_l_i/library';
 
 import { Icon } from '@iconify/react';
 import { gh } from '@/definitions';
+import { Magnetic } from './Magnetic';
 
 const projects = [
 
@@ -74,24 +75,27 @@ const Article = ({ data }: dataProps) => {
         </figcaption>
       </figure>
       <div className="grid items-start">
-        <h3 className='heading-2 px-[0.2rem]'>
+        <h3 className='px-[0.2rem] pb-0'>
 
           <span >{data.title}</span>
 
         </h3>
-        {data.subtitle && <p className='subtitle text-sm'>{data.subtitle}</p>}
+        {data.subtitle && <p className='subtitle'>{data.subtitle}</p>}
         {data.description && <p className='description'>{data.description}</p>}
 
         <div className="pt-3 grid sm:grid-flow-col w-fit gap-2 *:rounded-lg">
-          <a href={data.url} className="grid-row btn-primary">
-            <span className=''>Ver demo de  {data.title}</span>
-            <Icon icon="ooui:link-external-ltr" />
-          </a>
-
-          {data.repo && <a href={data.repo} className='grid-row btn-secondary '>
-            <span className=''>Repositorio</span>
-            <Icon icon="ooui:link-external-ltr" />
-          </a>}
+          <Magnetic>
+            <a href={data.url} className="grid-row btn-cta">
+              <span className=''>Ver demo</span>
+              <Icon icon="ooui:link-external-ltr" />
+            </a>
+          </Magnetic>
+          {data.repo && <Magnetic>
+            <a href={data.repo} className='grid-row btn-secondary '>
+              <span className=''>Repositorio</span>
+              <Icon icon="ooui:link-external-ltr" />
+            </a>
+          </Magnetic>}
         </div>
 
 
@@ -105,7 +109,7 @@ export default function Projects() {
     <section id='proyectos' className=''>
       <div className="text-center">
         <Heading>Proyectos destacados</Heading>
-        <p className="subheading">
+        <p>
           <span>Una selección de mis proyectos públicos del 2024.</span>
         </p>
       </div>
@@ -116,10 +120,12 @@ export default function Projects() {
       </div>
 
       <div className="pt-10 ">
-        <a href={gh} className="mx-auto w-fit btn-secondary rounded-md  duration-300  active:translate-y-1 active:scale-x-110 active:scale-y-90 flex items-center gap-2 p-2 px-5">
-          <span>Ver Github</span>
-          <Icon icon="ooui:link-external-ltr" />
-        </a>
+        <Magnetic>
+          <a href={gh} className="mx-auto w-fit btn-secondary rounded-md  duration-300  active:translate-y-1 active:scale-x-110 active:scale-y-90 flex items-center gap-2 p-2 px-5">
+            <span>Ver Github</span>
+            <Icon icon="ooui:link-external-ltr" />
+          </a>
+        </Magnetic>
       </div>
 
     </section>
