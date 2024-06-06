@@ -169,7 +169,7 @@ img {
 h2,
 h3 {
   line-height: 1;
-  padding-block: .3em;
+  padding-block: .2em;
 }
 
 h1 {
@@ -215,11 +215,11 @@ h1 {
 
 h2 {
 
-  font-size: var(--fs-xl);
+  font-size: var(--fs-lg);
   font-weight: 400;
 
   &+p {
-    font-size: var(--fs-md);
+    font-size: var(--fs-base);
     font-weight: 400;
     padding-bottom: 1em;
     line-height: 1.3;
