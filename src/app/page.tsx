@@ -7,6 +7,7 @@ al parecer cada componente de una libreria npm necesita usar useEffect, en lugar
 */
 
 import { AboutMe, ApSidebar, Experience, FirstCard, Footer, Header, Hero, Projects, Skills } from "@/components";
+import MoreProjects from "@/components/MoreProjects";
 
 export default function Page() {
 
@@ -32,6 +33,8 @@ export default function Page() {
             <Experience />
 
             <Projects />
+
+            <MoreProjects />
 
 
             <Skills />

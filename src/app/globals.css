@@ -702,6 +702,14 @@ footer {
 
   display: grid;
   margin-top: 5rem;
+  gap: 1.2rem;
+
+}
+
+@media screen and (min-width: 600px) {
+  .article {
+    grid-template-columns: 1fr minmax(20ch, 1fr);
+  }
 }
 
 .article::before {
@@ -727,24 +735,28 @@ footer {
 }
 
 
-.article {
-  & figcaption {
-    position: absolute;
-    left: 0;
-    top: 0;
-  }
-
-  & .tags {
-    padding: var(--spacer);
-    height: fit-content;
-  }
-
-  & .aps-tag {
-    font-size: var(--fs-sm);
-    color: rgb(48, 47, 47);
-  }
+article {
+  font-size: var(--fs-sm);
 }
 
+article .tags {
+  padding: var(--spacer);
+  height: fit-content;
+  gap: .1rem;
+  color: rgb(48, 47, 47);
+
+}
+
+article .aps-tag {
+  font-size: .8em;
+}
+
+article figcaption {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 7;
+}
 
 
 .subtitle,
@@ -1155,4 +1167,98 @@ time {
   100% {
     transform: translateX(0%);
   }
+}
+
+
+
+.aps-image {
+  /* display: grid; */
+  height: fit-content;
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+
+/* 
+https://stackoverflow.com/questions/40532204/media-query-for-devices-supporting-hover
+
+*/
+@media not all and (hover: none) {
+
+  .project-image-container {
+    position: relative;
+
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    /* align-items: end; */
+
+    & .aps-image {
+      flex-grow: 1;
+      flex-basis: 100%;
+      min-width: 100%;
+      user-select: none;
+
+    }
+
+  }
+}
+
+@media (hover:hover) {
+  .project-image-container {
+    position: relative;
+
+    display: grid;
+    /* align-items: end; */
+
+    & .aps-image {
+      min-width: unset;
+    }
+
+    & .aps-image:nth-child(2) {
+
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: all .2s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+    }
+
+    &:hover .aps-image:nth-child(2) {
+      opacity: 1;
+    }
+  }
+
+}
+
+
+
+.year {
+  font-size: var(--fs-xs);
+  /* background-color: var(--bg-dot); */
+  position: absolute;
+  top: 0rem;
+  right: 0rem;
+  opacity: .8;
+  /* padding: 0; */
+}
+
+
+#mas-proyectos .grid-list {
+  display: grid;
+  /* grid-template-columns: 1fr 1fr; */
+  --spacer: .5rem;
+}
+
+
+@media screen and (min-width: 600px) {
+  #mas-proyectos .grid-list {
+    /* display: grid; */
+    grid-template-columns: 1fr 1fr;
+    /* --spacer: .5rem; */
+  }
+
+}
+
+.article-extra {
+  position: relative;
 }

@@ -13,6 +13,17 @@ import { Magnetic } from './Magnetic';
 const projects = [
 
   {
+    year: 2024,
+    title: 'Excel To Charts',
+    subtitle: 'Gráficos al instante',
+    url: 'https://excel-to-charts.vercel.app',
+    description: 'Generador de gráficos, a partir de los datos de tu archivo .xlsx. \nLos archivos no dejan tu computadora (o celular, o tablet...).\nIncluye visualizador de tablas.',
+    image: '/images/excel1.png',
+    image2: '/images/excel2.png',
+    tags: ['React', 'CSS3', 'TypeScript']
+  },
+  {
+    year: 2023,
     title: 'Notenook',
     subtitle: 'Un espacio confortable para tus notas',
     url: 'https://araceliponce.github.io/notenook/',
@@ -22,14 +33,7 @@ const projects = [
     tags: ['React', 'HTML5', 'CSS3', 'Mantine', 'TypeScript']
   },
   {
-    title: 'WICON',
-    subtitle: 'Weather It Changes Or Not.',
-    description: 'El clima: ¿cambia? ¿o no?\nDashboard interactivo con data de las estaciones metereológicas de la región Tacna - Perú (de 1960 a 2015).\nLas selecciones que hagas son añadidas al url. \nAsí, puedes guardarlo como un bookmark o compartirlo, manteniendo tus selecciones.',
-    url: 'https://wicon.vercel.app/',
-    image: '/images/wicon.png',
-    tags: ['NextJS', 'React', 'CSS3', 'TailwindCSS', 'HTML5', 'TypeScript'],
-  },
-  {
+    year: 2023,
     title: 'Rooster',
     subtitle: 'Landing page',
     description: 'Semi-clon de la página de inicio de: www.redroostercoffee.com\nUsando Vue3, implementé modo oscuro y dos sidebars (derecho e izquierdo).\nAdemás, es responsive.',
@@ -43,12 +47,14 @@ const projects = [
 
 interface oneArticleProps {
   // [key: string]: string
+  year: number
   title: string
   subtitle?: string
   description: string
   url: string
   repo?: string
   image: string
+  image2?: string
   tags: string[]
 }
 
@@ -61,11 +67,12 @@ const Article = ({ data }: dataProps) => {
   return (
     <article
 
-      className="article p-5 md:grid-cols-2 gap-3 "
+      className="article p-5 gap-3 "
     >
-      <figure className='relative rounded-md overflow-hidden'>
+      <div className='relative rounded-md overflow-hidden project-image-container'>
         {/* <Image width={400} height={400} src={data.image} className='' alt="" /> */}
-        <Image loading="lazy" ratio={5 / 4} src={data.image} alt="screenshot" />
+        <Image loading="lazy" ratio={5 / 3.5} src={data.image} alt="screenshot" />
+        {data.image2 && <Image loading="lazy" ratio={5 / 3.5} src={data.image2} alt="screenshot" />}
         <figcaption>
           <ul className='tags'>
             {data.tags && data.tags.map((tag, index) => (
@@ -73,17 +80,16 @@ const Article = ({ data }: dataProps) => {
             ))}
           </ul>
         </figcaption>
-      </figure>
-      <div className="grid items-start">
+      </div>
+      <div className="grid items-start relative">
+        <small className='year p-0'>{data.year}</small>
         <h3 className='px-[0.2rem] pb-0'>
-
           <span >{data.title}</span>
-
         </h3>
         {data.subtitle && <p className='subtitle'>{data.subtitle}</p>}
         {data.description && <p className='description'>{data.description}</p>}
 
-        <div className="pt-3 grid sm:grid-flow-col w-fit gap-2 *:rounded-lg">
+        <div className="pt-2 grid sm:grid-flow-col w-fit gap-2 *:rounded-lg">
           <Magnetic>
             <a href={data.url} className="grid-row btn-cta">
               <span className=''>Ver demo</span>
@@ -119,14 +125,14 @@ export default function Projects() {
         ))}
       </div>
 
-      <div className="pt-10 ">
+      {/* <div className="pt-10 ">
         <Magnetic>
           <a href={gh} className="mx-auto w-fit btn-secondary rounded-md  duration-300  active:translate-y-1 active:scale-x-110 active:scale-y-90 flex items-center gap-2 p-2 px-5">
             <span>Ver Github</span>
             <Icon icon="ooui:link-external-ltr" />
           </a>
         </Magnetic>
-      </div>
+      </div> */}
 
     </section>
 
