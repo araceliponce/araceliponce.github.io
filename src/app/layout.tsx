@@ -21,6 +21,7 @@ export const metadata: Metadata = {
   themeColor: "#000000",
   colorScheme: "light dark",
   creator: "Araceli Ponce Sanga",
+  verification: { google: "ejnsoajdKpTiqzkwcKl8BTDARjHfajbqYwORjGgP1wM" },
   openGraph: {
     type: "website",
     url: SITE_URL,
