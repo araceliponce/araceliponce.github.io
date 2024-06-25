@@ -6,40 +6,64 @@ import { jsxs as k, jsx as g, Fragment as me } from "react/jsx-runtime";import S
 al parecer cada componente de una libreria npm necesita usar useEffect, en lugar de colocar en cada uno, estará aquí. Poco optimo, pero es solo 1 landing page
 */
 
-import { AboutMe, ApSidebar, Experience, FirstCard, Footer, Header, Hero, Projects, Skills } from "@/components";
+import { AboutMe, Experience, FirstCard, Footer, Header, Hero, Projects, Skills } from "@/components";
 import MoreProjects from "@/components/MoreProjects";
+import useIntersectionObserver from "@/lib/useObserver";
+import { useRef } from "react";
 
 export default function Page() {
+
+
+
+  const revealRefs = [
+    useRef<HTMLDivElement>(null),
+    useRef<HTMLDivElement>(null),
+    useRef<HTMLDivElement>(null),
+    useRef<HTMLDivElement>(null),
+    useRef<HTMLDivElement>(null),
+    useRef<HTMLDivElement>(null),
+  ];
+
+  const areVisible = useIntersectionObserver(revealRefs);
+
 
   return (
     <>
 
-      <div className="may-layout">
+      <div className="layout">
 
 
-        <div id="sidebar" className="relative">
 
-          <ApSidebar />
-        </div>
-        <div id="main">
+        <div id="main" className="px-4">
 
           <Header />
           <main>
 
-            <Hero />
+            <div className="reveal" ref={revealRefs[0]}>
+              <Hero />
+            </div>
 
-            {/* <FirstCard /> */}
+            <div className="reveal" ref={revealRefs[1]}>
 
-            <Experience />
+              <Experience />
+            </div>
 
-            <Projects />
+            <div className="reveal" ref={revealRefs[2]}>
+              <Projects />
+            </div>
 
-            <MoreProjects />
+            <div className="reveal" ref={revealRefs[3]}>
+              <MoreProjects />
+            </div>
 
 
-            <Skills />
+            <div className="reveal" ref={revealRefs[4]}>
+              <Skills />
 
-            <AboutMe />
+            </div>
+            <div className="reveal" ref={revealRefs[5]}>
+              <AboutMe />
+            </div>
 
           </main>
 

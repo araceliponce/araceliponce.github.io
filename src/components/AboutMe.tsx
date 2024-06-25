@@ -28,7 +28,7 @@ export default function AboutMe() {
             <ul className="star-list">
 
 
-              <li>Experiencia profesional: 1.5 años</li>
+              <li>Experiencia profesional: 2 años</li>
               <li>Estudios: Sí</li>
               <li>Inglés: Técnico</li>
               <li>Git y Github: Sí</li>

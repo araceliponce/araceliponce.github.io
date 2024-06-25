@@ -7,8 +7,8 @@ import { Heading } from '@a_r_a_c_e_l_i/library';
 import { Tag } from '@a_r_a_c_e_l_i/library';
 
 import { Icon } from '@iconify/react';
-import { gh } from '@/definitions';
 import { Magnetic } from './Magnetic';
+import ClassSwitcher from './ClassSwitcher';
 
 const projects = [
 
@@ -111,6 +111,9 @@ const Article = ({ data }: dataProps) => {
 };
 
 export default function Projects() {
+
+  // const classes: string[] = ['grid gap-5 childs-outlined', 'grid gap-5 childs-outlined'];
+
   return (
     <section id='proyectos' className=''>
       <div className="text-center">
@@ -124,15 +127,11 @@ export default function Projects() {
           <Article key={index} data={project} />
         ))}
       </div>
-
-      {/* <div className="pt-10 ">
-        <Magnetic>
-          <a href={gh} className="mx-auto w-fit btn-secondary rounded-md  duration-300  active:translate-y-1 active:scale-x-110 active:scale-y-90 flex items-center gap-2 p-2 px-5">
-            <span>Ver Github</span>
-            <Icon icon="ooui:link-external-ltr" />
-          </a>
-        </Magnetic>
-      </div> */}
+      {/* <ClassSwitcher classes={classes}>
+        {projects.map((project, index) => (
+          <Article key={index} data={project} />
+        ))}
+      </ClassSwitcher> */}
 
     </section>
 
