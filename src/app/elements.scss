@@ -1,0 +1,33 @@
+.image-grid {
+  display: grid;
+  place-items: center;
+  position: relative;
+  grid-template-areas: 'stack';
+
+  &>* {
+    grid-area: stack;
+    opacity: 0;
+    transform-origin: center center;
+    transition: transform 0.5s, opacity 0.5s;
+    // grid-area: unset;
+
+  }
+
+  &.expanded {
+    display: grid;
+    --col-width: min(10rem, 100%);
+    grid-template-columns: repeat(auto-fill, minmax(var(--col-width), 1fr));
+    // grid-template-areas: unset; not necesary
+    gap: 1px;
+    transition: all 3s ease;
+
+    &>* {
+      // grid-area: unset;
+    }
+  }
+}
+
+.grid-area-unset {
+  grid-area: unset;
+  background-color: black;
+}
