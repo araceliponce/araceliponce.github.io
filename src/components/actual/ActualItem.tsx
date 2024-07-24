@@ -89,11 +89,11 @@ export default function ActualItem({
 
           <div className="desc">
             <p className="text-sm">{desc}</p>
-            <ul className="flex flex-wrap gap-1 pt-[.5rem]">
+            {/* <ul className="flex flex-wrap gap-1 pt-[.5rem]">
               {stack?.map((item) => (
                 <Tag icon={item} key={item} />
               ))}
-            </ul>
+            </ul> */}
           </div>
 
           <time className="text-sm">{from}</time>

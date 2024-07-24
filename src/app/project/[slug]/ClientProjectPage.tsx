@@ -6,6 +6,7 @@ import { Project, getProject } from './ProjectServer';
 import { Tag } from '@a_r_a_c_e_l_i/library';
 import Image from 'next/image';
 import { highlightWords } from '@/lib/functions';
+import { Icon } from '@iconify/react/dist/iconify.js';
 
 export default function ClientProjectPage() {
   const [project, setProject] = useState<Project | undefined>(undefined);
@@ -34,28 +35,21 @@ export default function ClientProjectPage() {
 
 
       <section>
-        <article className='bg-pink-50'>
+        <article className=''>
           <h1>{project.title}</h1>
 
 
-          <div className="grid md:grid-cols-2 gap-[2vw]">
+          <div className="grid md:grid-cols-2 gap-[4vw]">
             <div className='mx-auto'>
               {project.cover.map((image, index) => (
                 <Image key={index} src={image.img} alt={`Cover ${index + 1}`} width='350' height='400' />
               ))}
 
             </div>
-            <div className='sticky top-[6rem]  h-fit'>
+            <div className='sticky top-[6rem] desc grid gap-2 h-fit'>
 
-              <p>Trabajé en este proyecto en {project.from}</p>
-              <div>
-                <p>Tecnologías usadas:</p>
-                <ul className='flex flex-wrap gap-2'>
-                  {project.stack.map((tech, index) => (
-                    <Tag key={index} icon={tech} />
-                  ))}
-                </ul>
-              </div>
+              <p>Trabajé en este proyecto en {project.from}.</p>
+
               <div>
                 <p>Descripción:</p>
                 <ul className='list'>
@@ -73,13 +67,28 @@ export default function ClientProjectPage() {
                 </ul> */}
 
               </div>
-              <div>
+              <div className='grid gap-1'>
+                <p>Tecnologías usadas:</p>
+                <ul className='flex flex-wrap gap-2'>
+                  {project.stack.map((tech, index) => (
+                    <Tag key={index} icon={tech} />
+                  ))}
+                </ul>
+              </div>
+              <div className='grid gap-1'>
                 <p>Enlaces:</p>
-                <a href={project.url} target="_blank" rel="noopener noreferrer">Visit project</a>
+                <a href={project.url} target="_blank" rel="noopener noreferrer" className='link-inline'>
+                  <span>Ver online</span>
+                  <Icon icon='ic:outline-arrow-outward' />
+
+                </a>
 
                 {project.repo && (
-                  <a href={project.repo} target="_blank" rel="noopener noreferrer">View repository</a>
+                  <a href={project.repo} target="_blank" rel="noopener noreferrer" className='link--inline link-inline--secondary'>View repository</a>
                 )}
+
+
+
               </div>
             </div>
           </div>

@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter, Rubik } from "next/font/google";
 import "./globals.scss";
 import "./actual.scss";
 import { GoogleAnalytics } from '@next/third-parties/google'
 import { ActualNav } from "@/components/actual/ActualNav";
 import ActualHeader from "@/components/actual/ActualHeader";
 
-const inter = Inter({ subsets: ["latin"] });
+const font1 = Rubik({ subsets: ["latin"] });
 
 
 
@@ -63,7 +63,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-      <body className={`light ${inter.className}`}>
+      <body className={`light ${font1.className}`}>
 
         <ActualHeader />
 
