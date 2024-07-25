@@ -124,7 +124,7 @@ function ActualHeader() {
         <ActualNav />
 
 
-        <div className="fixed bottom-10 left-[50%] -translate-x-[50%] md:absolute md:translate-x-0 md:w-full md:inset-0 grid items-center">
+        <div className="fixed top-[75px] right-[25px]  md:absolute md:translate-x-0 md:w-full md:inset-0 grid items-center">
           <Circle x={x} y={y} />
         </div>
 

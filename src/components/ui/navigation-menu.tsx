@@ -47,7 +47,7 @@ const NavigationMenuItem = NavigationMenuPrimitive.Item
 
 // cada trigger
 const navigationMenuTriggerStyle = cva(
-  "group inline-flex h-[2.5rem] min-w-[2.5rem] items-center justify-center rounded-md bg-background px-2 py-2 text-sm font-medium transition-colors hover:bg-pink-300 hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-pink-400"
+  "group inline-flex h-[2.5rem] min-w-[2.5rem] items-center justify-center rounded-md bg-background px-2 py-2 text-sm transition-colors hover:bg-pink-300 hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-pink-400"
 )
 
 const NavigationMenuTrigger = React.forwardRef<

@@ -27,10 +27,10 @@ interface NavItem { icono?: any, title: string; href: string; description: strin
 const NAV_WORKS: NavItem[] = [
   {
     icono: '/iconos/blue.png',
-    title: "Projectos",
+    title: "Proyectos",
     href: "/#proyectos",
     description:
-      "Selección de projectos destacados (2023 - 2024).",
+      "Selección de proyectos destacados (2023 - 2024).",
   },
   // {
   //   title: "Extras",

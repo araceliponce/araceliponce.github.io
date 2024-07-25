@@ -45,7 +45,7 @@ export default function ActualItem({
       <div>
 
 
-        <div className="project__carousel-wrapper">
+        <div className="project__carousel-wrapper changes-color">
           {cover && cover.length > 0 ? (
             <div
             >
@@ -62,13 +62,13 @@ export default function ActualItem({
 
         <div className="project__text text-sm">
 
-          <h3 className="tracking-tighter">{title}</h3>
+          <h3 className="">{title}</h3>
 
           <div className="desc">
             <p>{desc}</p>
           </div>
 
-          <time className="">{from}</time>
+          <time className="tracking-tighter">{from}</time>
         </div>
 
         <div className="project__footer gap-1">

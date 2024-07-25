@@ -31,7 +31,7 @@ export default function ClientProjectPage() {
 
 
   return (
-    <main>
+    <main className='main--project'>
 
 
       <section>
@@ -39,14 +39,9 @@ export default function ClientProjectPage() {
           <h1>{project.title}</h1>
 
 
-          <div className="grid md:grid-cols-2 gap-[4vw]">
-            <div className='mx-auto'>
-              {project.cover.map((image, index) => (
-                <Image key={index} src={image.img} alt={`Cover ${index + 1}`} width='350' height='400' />
-              ))}
+          <div className="grid md:grid-cols-[1fr,1.2fr] gap-[2vw]">
 
-            </div>
-            <div className='sticky top-[6rem] desc grid gap-2 h-fit'>
+            <div className='md:sticky md:top-[6rem] desc grid gap-2 h-fit changes-color p-[4vw] rounded-[.3rem]'>
 
               <p>Trabajé en este proyecto en {project.from}.</p>
 
@@ -84,17 +79,25 @@ export default function ClientProjectPage() {
                 </a>
 
                 {project.repo && (
-                  <a href={project.repo} target="_blank" rel="noopener noreferrer" className='link--inline link-inline--secondary'>View repository</a>
+                  <a href={project.repo} target="_blank" rel="noopener noreferrer" className='link--inline link-inline--secondary'>Ver repositorio</a>
                 )}
 
 
 
               </div>
             </div>
+
+            <div className='changes-color p-[3vw] rounded-[.3rem] grid gap-[1rem]'>
+              {project.cover.map((image, index) => (
+                <Image key={index} src={image.img} alt={`Cover ${index + 1}`} width='350' height='400' className='mx-auto' />
+              ))}
+
+            </div>
+
           </div>
 
         </article>
       </section>
-    </main>
+    </main >
   );
 }
