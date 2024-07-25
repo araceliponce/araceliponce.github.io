@@ -73,7 +73,7 @@
   }
 
   .link__text__title {
-    @apply uppercase text-base font-medium text-gray-900/90 leading-none;
+    @apply text-base font-medium text-gray-900/90 leading-none;
   }
 
   .link__text__desc {
@@ -84,12 +84,16 @@
 .link {
   display: grid;
   grid-template-columns: 2rem 1fr;
-  gap: .5rem;
-  align-items: center;
+  gap: .9rem;
+  align-items: start;
+  height: 100%;
+  line-height: .8;
 
   &__icon {
     display: grid;
     place-content: center;
+    // background-color: pink;    
+    align-self: center;
   }
 }
 

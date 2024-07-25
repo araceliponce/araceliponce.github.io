@@ -49,6 +49,10 @@ main {
   padding-block: 10rem 5rem;
 }
 
+html {
+  scroll-padding-block: 12rem;
+}
+
 :root {
 
   --size-circle-wrapper: 4rem;
@@ -108,7 +112,7 @@ main {
   --color-body: rgb(34, 34, 34);
 
   // --bg-card-initial: #ebebeb;
-  --bg-card-initial: rgba(216, 214, 214, 0.8);
+  --bg-card-initial: rgba(230, 230, 230, 0.8);
 }
 
 .dark {

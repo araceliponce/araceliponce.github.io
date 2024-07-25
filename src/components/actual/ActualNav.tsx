@@ -20,14 +20,15 @@ import { animate, motion, useMotionValue, useTransform } from "framer-motion"
 import { Icon } from "@iconify/react/dist/iconify.js"
 import { ENLACES } from "@/lib/data"
 
+import shadow from '@/../public/40.svg'
 
-
-interface NavItem { title: string; href: string; description: string }
+interface NavItem { icono?: any, title: string; href: string; description: string }
 
 const NAV_WORKS: NavItem[] = [
   {
+    icono: '/iconos/blue.png',
     title: "Projectos",
-    href: "/#experiencia-laboral",
+    href: "/#proyectos",
     description:
       "Selección de projectos destacados (2023 - 2024).",
   },
@@ -40,12 +41,14 @@ const NAV_WORKS: NavItem[] = [
 ]
 const SUBNAV_WORKS: NavItem[] = [
   {
+    icono: '/iconos/blue.png',
     title: "Excel to Charts",
     href: "/project/charts",
     description:
-      "Aplicación web. Generador online de visualizaciones de datos (gráficos) a partir de archivos excel.",
+      "Aplicación web. Generador online de gráficos, a partir de archivos Excel.",
   },
   {
+    icono: '/iconos/blue.png',
     title: "Rooster",
     href: "/project/rooster",
     description:
@@ -55,19 +58,29 @@ const SUBNAV_WORKS: NavItem[] = [
 
 const NAV_PROFILE: NavItem[] = [
   {
+    icono: '/iconos/blue.png',
+    title: "Descarga mi CV",
+    href: "/CV_Araceli_Ponce_Sanga.pdf",
+    description:
+      "Actualizado en julio 2024.",
+  },
+  {
+    icono: '/iconos/blue.png',
     title: "Experiencia laboral",
     href: "/#experiencia-laboral",
     description:
-      "Experiencias laborales más recientes.",
+      "Experiencias laborales más recientes [en construcción].",
   },
 
   {
+    icono: '/iconos/blue.png',
     title: "Educación",
     href: "/#educacion",
     description:
       "[sección en construcción]",
   },
   {
+    icono: '/iconos/blue.png',
     title: "Habilidades",
     href: "/#habilidades",
     description:
@@ -110,9 +123,12 @@ export function ActualNav() {
 
 
 
-              <ul className="grid gap-3 p-4 w-[88vw] md:w-[500px] md:grid-cols-[.75fr,1fr]">
+              <ul
+                // className="grid gap-3 p-4 w-[88vw] md:w-[500px] md:grid-cols-[.75fr,1fr]"
+                className="grid gap-3 p-4 w-[88vw] md:w-[500px] "
+              >
 
-                <li></li>
+                {/* <li></li> */}
                 {/* <li className="row-span-3">
                   <NavigationMenuLink asChild>
                     <a
@@ -136,6 +152,7 @@ export function ActualNav() {
                     key={component.title}
                     title={component.title}
                     href={component.href}
+                    icono={component.icono}
                   >
                     {component.description}
                   </ListItem>
@@ -146,6 +163,7 @@ export function ActualNav() {
                     title={component.title}
                     href={component.href}
                     className="wide"
+                    icono={component.icono}
                   >
                     {component.description}
                   </ListItem>
@@ -173,12 +191,14 @@ export function ActualNav() {
             // forceMount
             >
 
-              <ul className="grid gap-3 p-4 w-[88vw] md:w-[500px] lg:grid-cols-[.75fr,1fr]">
+              <ul
+                className="grid gap-3 p-4 w-[88vw] md:w-[500px] lg:grid-cols-[.75fr,1fr]">
                 {NAV_PROFILE.map((component) => (
                   <ListItem
                     key={component.title}
                     title={component.title}
                     href={component.href}
+                    icono={component.icono}
                   >
                     {component.description}
                   </ListItem>
@@ -194,10 +214,21 @@ export function ActualNav() {
   )
 }
 
+
+
+//+
+interface ListItemProps extends React.ComponentPropsWithoutRef<"a"> {
+  // icono?: React.ReactNode
+  icono?: any
+  title: string
+}
+
 const ListItem = React.forwardRef<
   React.ElementRef<"a">,
-  React.ComponentPropsWithoutRef<"a">
->(({ className, title, children, ...props }, ref) => {
+  // React.ComponentPropsWithoutRef<"a">
+  ListItemProps
+>(({ className, icono, title, children, ...props }, ref) => {
+
   return (
     <li
       className={className}
@@ -212,7 +243,11 @@ const ListItem = React.forwardRef<
           {...props}
         >
           <span className="link__icon">
-            <Image src="/favicon_192.png" alt="logo" width={50} height={50} />
+            {icono && typeof icono === 'string' ? (
+              <img src={icono} width="25" height="25" alt="" className="icon" />
+            ) : (
+              <span className="icon">{icono}</span>
+            )}
           </span>
           <span className="link__text">
             <span className="link__text__title">{title}</span>
