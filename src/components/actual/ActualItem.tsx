@@ -40,32 +40,12 @@ export default function ActualItem({
 
 
   return (
-    <article
-    // className="grid sm:grid-cols-[minmax(20ch,10vw),1fr] bg-white rounded-md p-[3vw]"
-    >
+    <article>
 
-      <header
-      // className="bg-pink-00 grid md:grid-cols-[1fr,1fr] items-start pt-[1.5rem] pb-[1rem]"
-      >
-
-        {/* <div className="pb-1  opacity-90">
-          <h3 className="font-bold text-lg leading-none">{title}</h3>
-        </div>
-
-        <ul className="flex flex-wrap md:justify-end gap-1 pt-[.2rem]">
-          {stack?.map((item) => (
-            <Tag icon={item} key={item} />
-          ))}
-        </ul> */}
-
-      </header>
-      <div
-      // className="item__content"
-      // className={cover ? 'md:grid md:grid-cols-2 gap-[1rem]' : ''}
-      >
+      <div>
 
 
-        <div>
+        <div className="project__carousel-wrapper">
           {cover && cover.length > 0 ? (
             <div
             >
@@ -80,35 +60,27 @@ export default function ActualItem({
 
 
 
-        <div className="project__text">
+        <div className="project__text text-sm">
 
-
-          <h3 className="tracking-tighter  leading-none">
-            <span>{title}</span>
-          </h3>
+          <h3 className="tracking-tighter">{title}</h3>
 
           <div className="desc">
-            <p className="text-sm">{desc}</p>
-            {/* <ul className="flex flex-wrap gap-1 pt-[.5rem]">
-              {stack?.map((item) => (
-                <Tag icon={item} key={item} />
-              ))}
-            </ul> */}
+            <p>{desc}</p>
           </div>
 
-          <time className="text-sm">{from}</time>
+          <time className="">{from}</time>
         </div>
 
         <div className="project__footer gap-1">
 
           <a href={url} className="link-inline">
             <span>Ver online</span>
-            <Icon icon='ic:outline-arrow-outward' />
+            <Icon icon='solar:link-bold-duotone' />
           </a>
 
           <Link href={`/project/${slug}`} className="link-inline link-inline--secondary">
             <span>Ver detalles</span>
-            <Icon icon='ic:outline-arrow-outward' />
+            <Icon icon='solar:document-bold-duotone' />
           </Link>
         </div>
 
