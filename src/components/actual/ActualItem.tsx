@@ -1,15 +1,12 @@
 "use client";
-import React from "react";
-import Link from "next/link";
-import { highlightWords } from "@/lib/functions";
-
 import { Icon } from "@iconify/react/dist/iconify.js";
-import { Tag } from "@a_r_a_c_e_l_i/library";
+import Link from "next/link";
 import ProjectCarousel from "../ui/ProjectCarousel";
 
 
 type ItemProps = {
   cover: any[]
+  videoUrl?: string
   slug: string
   stack?: string[]
   from: string
@@ -23,16 +20,11 @@ type ItemProps = {
 
 export default function ActualItem({
   cover,
+  videoUrl,
   slug = '',
   from,
-  to,
   url,
-  repo,
-  // role,
-  stack,
   desc,
-  did,
-  // company,
   title
 }: ItemProps) {
 
@@ -45,7 +37,17 @@ export default function ActualItem({
       <div>
 
 
-        <div className="project__carousel-wrapper changes-color">
+        {/* <div className=" changes-color">
+          {videoUrl && videoUrl.length > 0 ? (
+            <div
+            >
+              <LocalVideoPlayer videoUrl={videoUrl} />
+            </div>
+          ) : null
+          }
+        </div> */}
+
+        <div className=" changes-color">
           {cover && cover.length > 0 ? (
             <div
             >
@@ -53,9 +55,6 @@ export default function ActualItem({
             </div>
           ) : null
           }
-
-
-
         </div>
 
 

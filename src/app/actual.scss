@@ -36,21 +36,17 @@ html {
 
 .limited,
 section {
-  max-width: 66rem;
+  max-width: 77rem;
   margin-inline: auto;
 }
 
-section {
-  padding-inline: 1rem;
-
-}
 
 main {
-  padding-block: 10rem 5rem;
+  padding-block: 8rem 5rem;
 }
 
 html {
-  scroll-padding-block: 12rem;
+  scroll-padding-block: 7rem;
 }
 
 :root {
@@ -169,7 +165,7 @@ body,
 h1,
 h2 {
   font-size: 1.5rem;
-  padding-bottom: 1em;
+  // padding-bottom: 1em;
   letter-spacing: -0.05em;
 }
 
@@ -179,25 +175,25 @@ h2 {
 }
 
 
+article h1 {
+  text-align: start;
+  font-size: 1.1rem;
+  min-height: 2rem;
+  display: grid;
+  align-items: center;
+}
+
 // projects
 .projects-grid {
+  --max-w-video: 300px;
   display: grid;
-  --col-width: min(36ch, 100%);
+  // --col-width: min(36ch, 100%);
+  --col-width: min(45ch, 100%);
   grid-template-columns: repeat(auto-fit, minmax(var(--col-width), 1fr));
   gap: 1rem;
   justify-content: center;
 
 
-  & .carousel,
-  .project__text {
-    margin-inline: auto;
-
-  }
-
-  & .carousel-ratio-wrapper {
-    height: 0;
-    padding-bottom: 71.43%;
-  }
 
   &>li {
     container-type: inline-size;
@@ -207,7 +203,8 @@ h2 {
   }
 
   & article {
-    max-width: 500px;
+    // max-width: 500px;
+    max-width: 600px;
     margin-inline: auto;
 
   }
@@ -234,8 +231,6 @@ h2 {
     display: grid;
     grid-template-columns: 1fr;
     padding-top: .5rem;
-
-
   }
 
 
@@ -267,26 +262,39 @@ article {
 
   --base: var(--bg-body);
 
-
-  // background-color: var(--bg-card-initial);
-  padding: clamp(1rem, 2vw + 10px, 4rem);
-  border-radius: .3rem;
   height: 100%;
+  padding: 1rem;
 
 
   & * {
     line-height: 1.3;
   }
 
-  & .project__carousel-wrapper {
-
-    padding-block: 2rem;
-    border-radius: .3rem;
-  }
-
   & .changes-color {
     background-color: var(--bg-card-initial);
+    border-radius: .3rem;
+    padding-inline: clamp(1rem, 2vw + 10px, 4rem);
+    padding-block: 1rem;
   }
+
+  & .carousel,
+  .project__text {
+    margin-inline: auto;
+  }
+
+  // wraps the slides
+  & .carousel-ratio-wrapper {
+    height: 0;
+    padding-bottom: 71.43%;
+    position: relative;
+  }
+
+
+  & .video-wrapper>* {
+    position: absolute;
+    inset: 0;
+  }
+
 
   & .desc {
     font-weight: 400;
@@ -330,10 +338,7 @@ article {
 
 
 .main--project {
-  // --bg: pink;
-
   .changes-color {
-    // background-color: var(--bg);
     background-color: var(--bg-card-initial);
     //solo en caso de pags de 1 projecto, el color no cambia
   }
@@ -449,11 +454,6 @@ li:nth-of-type(n+9) {
 .wide {
   grid-column: -1/1 !important;
   width: 100%;
-
-  &:first-of-type {
-    border-top: 1px solid blueviolet;
-    background-color: rebeccapurple;
-  }
 }
 
 .list>li {
@@ -472,4 +472,13 @@ li:nth-of-type(n+9) {
     line-height: inherit;
     transform: translate(-1em, 0);
   }
+
+  & b {
+    // color: coral;
+    font-weight: 500;
+  }
+}
+
+a {
+  cursor: pointer;
 }

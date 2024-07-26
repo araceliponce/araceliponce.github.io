@@ -1,14 +1,15 @@
 import { projects } from '@/lib/data';
 
 export type Project = {
-  slug: string;
-  cover: { img: string }[];
-  from: string;
-  stack: string[];
-  title: string;
-  url: string;
-  repo?: string;
-  did: string[];
+  slug: string
+  cover: { img: string }[]
+  videoUrl?: string
+  from: string
+  stack: string[]
+  title: string
+  url: string
+  repo?: string
+  did: string[]
 };
 
 const getProject = (slug: string): Project | undefined => {

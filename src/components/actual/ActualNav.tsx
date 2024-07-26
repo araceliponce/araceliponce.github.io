@@ -24,7 +24,7 @@ import shadow from '@/../public/40.svg'
 
 interface NavItem { icono?: any, title: string; href: string; description: string }
 
-const NAV_WORKS: NavItem[] = [
+const NAV_PAGE: NavItem[] = [
   {
     icono: '/iconos/blue.png',
     title: "Proyectos",
@@ -38,6 +38,27 @@ const NAV_WORKS: NavItem[] = [
   //   description:
   //     "[sección en construcción]",
   // },
+  {
+    icono: '/iconos/blue.png',
+    title: "Experiencia laboral",
+    href: "/#experiencia-laboral",
+    description:
+      "Experiencias laborales más recientes [en construcción].",
+  },
+  {
+    icono: '/iconos/blue.png',
+    title: "Educación",
+    href: "/#educacion",
+    description:
+      "[sección en construcción]",
+  },
+  {
+    icono: '/iconos/blue.png',
+    title: "Habilidades",
+    href: "/#habilidades",
+    description:
+      "[sección en construcción]",
+  },
 ]
 const SUBNAV_WORKS: NavItem[] = [
   {
@@ -64,28 +85,7 @@ const NAV_PROFILE: NavItem[] = [
     description:
       "Actualizado en julio 2024.",
   },
-  {
-    icono: '/iconos/blue.png',
-    title: "Experiencia laboral",
-    href: "/#experiencia-laboral",
-    description:
-      "Experiencias laborales más recientes [en construcción].",
-  },
 
-  {
-    icono: '/iconos/blue.png',
-    title: "Educación",
-    href: "/#educacion",
-    description:
-      "[sección en construcción]",
-  },
-  {
-    icono: '/iconos/blue.png',
-    title: "Habilidades",
-    href: "/#habilidades",
-    description:
-      "[sección en construcción]",
-  },
 ]
 
 
@@ -125,7 +125,7 @@ export function ActualNav() {
 
               <ul
                 // className="grid gap-3 p-4 w-[88vw] md:w-[500px] md:grid-cols-[.75fr,1fr]"
-                className="grid gap-3 p-4 w-[88vw] md:w-[500px] "
+                className="nav-items grid gap-3 p-4 w-[88vw] md:w-[500px] "
               >
 
                 {/* <li></li> */}
@@ -147,30 +147,42 @@ export function ActualNav() {
                 </li> */}
 
 
-                {NAV_WORKS.map((component) => (
+                {NAV_PAGE.map((component) => (
                   <ListItem
                     key={component.title}
                     title={component.title}
                     href={component.href}
-                    icono={component.icono}
-                  >
-                    {component.description}
-                  </ListItem>
-                ))}
-                {SUBNAV_WORKS.map((component) => (
-                  <ListItem
-                    key={component.title}
-                    title={component.title}
-                    href={component.href}
-                    className="wide"
                     icono={component.icono}
                   >
                     {component.description}
                   </ListItem>
                 ))}
 
-                <li>
-                  <a href={ENLACES.npm} className="link">
+              </ul>
+            </NavigationMenuContent>
+          </NavigationMenuItem>
+          <NavigationMenuItem>
+            <NavigationMenuTrigger>Enlaces</NavigationMenuTrigger>
+            <NavigationMenuContent
+            // forceMount
+            >
+
+              <ul
+                className="nav-items grid gap-3 p-4 w-[88vw] md:w-[500px] lg:grid-cols-[1fr,1fr]">
+                {NAV_PROFILE.map((component) => (
+                  <ListItem
+                    key={component.title}
+                    title={component.title}
+                    href={component.href}
+                    icono={component.icono}
+                    className="wide"
+                  >
+                    {component.description}
+                  </ListItem>
+                ))}
+
+                <li className="border-t pt-[.8rem] wide">
+                  <a href={ENLACES.npm} className="link ">
                     <span className="link__icon">
                       <Icon icon='iconoir:npm' />
                     </span>
@@ -182,27 +194,20 @@ export function ActualNav() {
                     </span>
                   </a>
                 </li>
-              </ul>
-            </NavigationMenuContent>
-          </NavigationMenuItem>
-          <NavigationMenuItem>
-            <NavigationMenuTrigger>Acerca de mí</NavigationMenuTrigger>
-            <NavigationMenuContent
-            // forceMount
-            >
 
-              <ul
-                className="grid gap-3 p-4 w-[88vw] md:w-[500px] lg:grid-cols-[.75fr,1fr]">
-                {NAV_PROFILE.map((component) => (
+                {SUBNAV_WORKS.map((component) => (
                   <ListItem
                     key={component.title}
                     title={component.title}
                     href={component.href}
+                    // className="wide"
                     icono={component.icono}
                   >
                     {component.description}
                   </ListItem>
                 ))}
+
+
               </ul>
             </NavigationMenuContent>
           </NavigationMenuItem>
@@ -244,7 +249,7 @@ const ListItem = React.forwardRef<
         >
           <span className="link__icon">
             {icono && typeof icono === 'string' ? (
-              <img src={icono} width="25" height="25" alt="" className="icon" />
+              <Image src={icono} width="25" height="25" alt="" className="icon" />
             ) : (
               <span className="icon">{icono}</span>
             )}

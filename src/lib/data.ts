@@ -1,6 +1,6 @@
 import { ScrollingPoint } from "./interfaces";
 
-const professional_experience = [
+export const experiencia_laboral = [
   {
 
     stack: [
@@ -13,12 +13,13 @@ const professional_experience = [
     to: "Mar. 2024",
     role: "Desarrolladora Web Front End",
     company: "Onerami",
+    summary: "Trabajé en el equipo encargado de crear una aplicación de tipo ERP.",
     did: [
-      'Participé de la creación de un sistema de diseño completo.',
-      'Desarrollé historias de usuarios y diseñé interfaces en flujos paso a paso.',
-      'Implementé la librería de componentes con React, TypeScript y styled-components.',
-      'Redacté documentación técnica para facilitar la colaboración y el mantenimiento del código.',
-      'Uno de mis componentes destacados fue la Tabla con funcionalidades de sorting y renderizado personalizado de valores (strings, números, etc.) en fragmentos (checkboxes, botones, etc.).',
+      'Participé de la creación del sistema de diseño del proyecto (colores, íconos, estilos, etc.).',
+      'Diseñé los flujos de usuarios, que permitieron la implementación de endpoints y páginas específicas en el back y front end, respectivamente.',
+      'Implementé la librería de componentes funcionales en React, y usando CSS en JS.',
+      'Redacté documentación técnica completa y concisa para detallar propiedades de los componentes y facilitar procesos como el build o la generación de archivos .tgz.',
+      'Uno de mis componentes destacados fue la Tabla con sorting y renderizado personalizado de valores (strings, números, etc.) en fragmentos (checkboxes, botones, etc.).',
     ],
   },
   {
@@ -27,13 +28,14 @@ const professional_experience = [
     to: "Ene. 2024",
     role: "Desarrolladora Web Full Stack",
     company: "Fundación Calma",
+    summary: "Trabajé en dos proyectos de la fundación, mi rol era corregir y agregar funcionalidades.",
     did: [
       'Implementé procesos CRUD considerando roles de usuario y permisos de acceso.',
-      'Optimicé tareas multipasos, mejorando la usabilidad, accesibilidad por teclado.',
-      'Desarrollé dashboards web interactivos, con datos clave y gráficos interactivos.',
-      'Reduje peticiones externas (CDN) en un 20% y mejoré la responsividad en dispositivos móviles.',
-      'Maqueté correos usando HTML.',
-      'Me encargué de enviar cambios en las ramas de testing a producción en servidores remotos. Y de verificar su funcionamiento.',
+      'Mejoré la UI de tareas multipasos, simplificando la navegación e indicaciones en inputs y modales.',
+      'Implementé dashboards web interactivos con datos clave y gráficos interactivos, y la descarga de los reportes en formato PDF.',
+      'Mejoré la responsividad en dispositivos móviles con CSS.',
+      'Me encargué de enviar y verificar mis cambios en las ramas de testing a producción (servidores remotos).',
+      'También maqueté algunos correos usando HTML'
     ],
 
   },
@@ -52,6 +54,7 @@ export const projects = [
         img: '/images_e/row-3-column-1.png',
       },
     ],
+    videoUrl: '/demo_e.mp4',
     slug: 'charts',
     from: '2024',
     stack: ['React', 'CSS3', 'TypeScript'],
@@ -98,6 +101,7 @@ export const projects = [
         img: '/images_r/row-10-column-1.png',
       },
     ],
+    videoUrl: '/demo_r.mp4',
     slug: 'rooster',
     from: '2023',
     stack: ['Vue', 'CSS3', 'Vuetify', 'JavaScript'],
@@ -127,6 +131,7 @@ export const projects = [
         img: '/images_n/4.png',
       },
     ],
+    videoUrl: '/demo_n.mp4',
     slug: 'notenook',
     from: '2023',
     stack: ['React', 'CSS3', 'TypeScript'],
@@ -204,28 +209,28 @@ const NOTAS = {
 const MAIN_PROJECTS = [EXCEL, NOTAS]
 
 
-export const MAIN_SECTIONS: ScrollingPoint[] = [
-  {
-    title: "Experiencia Laboral Reciente",
-    id: "experiencia-laboral",
-    content: professional_experience,
-  },
-  {
-    title: "Proyectos Destacados",
-    // subtitle: "¿Mis mejores proyectos del 2023 y 2024?",
-    id: "proyectos",
-    content: projects,
-  },
-  // {
-  //   title: EXCEL.title,
-  //   id: 'e',
-  //   type: 'collage',
-  //   cover: EXCEL.cover,
-  //   content: EXCEL.did
-  // }
-];
+// export const MAIN_SECTIONS: ScrollingPoint[] = [
+//   {
+//     title: "Experiencia Laboral Reciente",
+//     id: "experiencia-laboral",
+//     content: professional_experience,
+//   },
+//   {
+//     title: "Proyectos Destacados",
+//     // subtitle: "¿Mis mejores proyectos del 2023 y 2024?",
+//     id: "proyectos",
+//     content: projects,
+//   },
+//   // {
+//   //   title: EXCEL.title,
+//   //   id: 'e',
+//   //   type: 'collage',
+//   //   cover: EXCEL.cover,
+//   //   content: EXCEL.did
+//   // }
+// ];
 
-export const MAIN_SECTIONS_IDS = MAIN_SECTIONS.map(section => section.id);
+// export const MAIN_SECTIONS_IDS = MAIN_SECTIONS.map(section => section.id);
 
 
 
