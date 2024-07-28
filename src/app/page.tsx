@@ -3,6 +3,7 @@ import { Toaster } from "@/components/ui/toaster";
 import ActualContent from "@/components/actual/ActualContent";
 import { useEffect } from "react";
 import Lenis from 'lenis';
+import ActualFooter from "@/components/actual/ActualFooter";
 
 export default function Home() {
 
@@ -33,8 +34,7 @@ export default function Home() {
     <>
 
       <ActualContent />
-
-
+      <ActualFooter />
 
       <Toaster />
 

@@ -112,6 +112,7 @@ a {
   min-width: 2em;
   min-height: 2em;
   border-radius: .3rem;
+
   // box-shadow: inset 0 0 0 1px rgba(175, 175, 175, 0.5),
   // 0 4px 10px -2px rgba(235, 151, 252, 0);
 
@@ -132,7 +133,29 @@ a {
 }
 
 
+.button {
+  display: inline-grid;
+  grid-auto-flow: column;
+  place-content: center;
+  width: fit-content;
 
+  align-items: center;
+  padding-inline: .5em;
+  min-height: 3em;
+  min-width: 3em;
+  gap: .2em;
+
+  transition: all .2s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+
+  &:hover {
+    background-color: violet;
+  }
+
+}
+
+footer .button {
+  background-color: white;
+}
 
 
 
@@ -318,5 +341,53 @@ img {
 @keyframes trail-anim {
   to {
     offset-distance: 100%;
+  }
+}
+
+
+
+
+
+
+
+.text-sm * {
+  line-height: 1.1;
+}
+
+.text-to-read * {
+  line-height: 1.6;
+}
+
+article {
+  color: var(--color-body);
+}
+
+canvas {
+  max-width: 100%;
+  // opacity: .3;
+
+}
+
+.erasing canvas {
+  opacity: .3;
+}
+
+.main-words-only {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  // z-index: 15;
+  pointer-events: none;
+
+  color: transparent;
+  padding: inherit;
+  border-radius: inherit;
+
+
+  & b {
+    color: var(--color-body);
+    filter: saturate(1rem)
   }
 }

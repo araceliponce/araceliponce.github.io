@@ -13,13 +13,13 @@ export const experiencia_laboral = [
     to: "Mar. 2024",
     role: "Desarrolladora Web Front End",
     company: "Onerami",
-    summary: "Trabajé en el equipo encargado de crear una aplicación de tipo ERP.",
+    summary: "Trabajé en el equipo encargado de diseñar y desarrollar una aplicación de tipo ERP.",
     did: [
       'Participé de la creación del sistema de diseño del proyecto (colores, íconos, estilos, etc.).',
       'Diseñé los flujos de usuarios, que permitieron la implementación de endpoints y páginas específicas en el back y front end, respectivamente.',
       'Implementé la librería de componentes funcionales en React, y usando CSS en JS.',
       'Redacté documentación técnica completa y concisa para detallar propiedades de los componentes y facilitar procesos como el build o la generación de archivos .tgz.',
-      'Uno de mis componentes destacados fue la Tabla con sorting y renderizado personalizado de valores (strings, números, etc.) en fragmentos (checkboxes, botones, etc.).',
+      'Uno de mis componentes destacados fue: la tabla con renderizado personalizado de valores (strings, números, etc.) en fragmentos (checkboxes, botones, etc.).',
     ],
   },
   {
@@ -28,11 +28,11 @@ export const experiencia_laboral = [
     to: "Ene. 2024",
     role: "Desarrolladora Web Full Stack",
     company: "Fundación Calma",
-    summary: "Trabajé en dos proyectos de la fundación, mi rol era corregir y agregar funcionalidades.",
+    summary: "Trabajé en dos proyectos de la fundación. Corrigiendo y agregando funcionalidades.",
     did: [
       'Implementé procesos CRUD considerando roles de usuario y permisos de acceso.',
       'Mejoré la UI de tareas multipasos, simplificando la navegación e indicaciones en inputs y modales.',
-      'Implementé dashboards web interactivos con datos clave y gráficos interactivos, y la descarga de los reportes en formato PDF.',
+      'Implementé dashboards web interactivos con datos clave y gráficos, y la descarga de los reportes en formato PDF.',
       'Mejoré la responsividad en dispositivos móviles con CSS.',
       'Me encargué de enviar y verificar mis cambios en las ramas de testing a producción (servidores remotos).',
       'También maqueté algunos correos usando HTML'

@@ -102,15 +102,16 @@ html {
 .light {
 
   --light: rgb(177, 239, 241);
+  --light: rgb(166, 229, 245);
   --dark: rgb(82, 197, 191);
 
   --color1: #f0bc2e;
   --color2: rgb(255, 254, 254);
-  // --color3: #5f75f3;
   --color3: rgb(127, 141, 252);
 
   --bg-body: rgb(255, 255, 255);
   --color-body: rgb(29, 29, 29);
+  --color-body: rgba(14, 10, 10, 0.85);
 
   --bg-card-initial: rgba(230, 230, 230, 0.8);
 }
@@ -141,7 +142,8 @@ body {
 }
 
 body,
-#circle {
+#circle,
+.changes-color-container {
   transition: color .2s cubic-bezier(0.445, 0.05, 0.55, 0.95), background .2s cubic-bezier(0.445, 0.05, 0.55, 0.95);
 }
 
@@ -175,6 +177,16 @@ h2 {
 }
 
 
+.main-heading {
+  font-size: clamp(1.5rem, 2vw + 10px, 4rem);
+  letter-spacing: -0.05em;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 300;
+  opacity: .9;
+  padding-bottom: 2rem;
+}
+
 article h1 {
   text-align: start;
   font-size: 1.1rem;
@@ -195,22 +207,23 @@ article h1 {
 
 
 
+  & * {
+    line-height: 1.2;
+  }
+
   &>li {
     container-type: inline-size;
     container-name: article-container;
-    padding-top: 3vw;
+    padding-bottom: 5rem;
     // more y separation between lis
   }
+
+
 
   & article {
     // max-width: 500px;
     max-width: 600px;
     margin-inline: auto;
-
-  }
-
-  & * {
-    line-height: 1;
   }
 
 
@@ -222,8 +235,7 @@ article h1 {
     padding-top: .5rem;
 
     font-weight: 400;
-
-
+    min-height: 4em; //estandar height
   }
 
 
@@ -264,17 +276,16 @@ article {
 
   height: 100%;
   padding: 1rem;
+  color: var(--color-body);
 
 
-  & * {
-    line-height: 1.3;
-  }
-
-  & .changes-color {
+  & .changes-color-container {
     background-color: var(--bg-card-initial);
+
     border-radius: .3rem;
     padding-inline: clamp(1rem, 2vw + 10px, 4rem);
-    padding-block: 1rem;
+    padding-block: 2rem;
+    overflow: hidden;
   }
 
   & .carousel,
@@ -296,31 +307,27 @@ article {
   }
 
 
-  & .desc {
-    font-weight: 400;
-    color: rgba(14, 10, 10, 0.85);
-  }
+
 
   & h3 {
     font-weight: 500;
   }
 
   & .aps-tag {
-    display: grid;
+    display: inline-grid;
     grid-auto-flow: column;
     align-items: center;
     width: fit-content;
 
     gap: .2em;
     letter-spacing: -.03em;
-    font-size: .8em;
+    font-size: .9em;
 
-    background-color: rgba(199, 199, 199, 0.7);
-    background-image: linear-gradient(123deg, transparent, rgba(255, 255, 255, 0.774));
-
-    color: currentColor;
+    // outline: 1px solid rgba(97, 80, 57, 0.4);
+    background-color: rgba(245, 245, 245, 0.445);
+    background-image: linear-gradient(-123deg, transparent, rgba(255, 255, 255, 0.6));
     border-radius: 100vh;
-    padding: .4em .5em;
+    padding: .1em .5em;
 
 
   }
@@ -332,15 +339,16 @@ article {
 
 }
 
-.use-colors .changes-color {
+.use-colors .changes-color-container {
   background-color: var(--bg);
 }
 
 
 .main--project {
-  .changes-color {
+  .changes-color-container {
     background-color: var(--bg-card-initial);
-    //solo en caso de pags de 1 projecto, el color no cambia
+    background-color: rgba(255, 255, 255, 0.5);
+    //solo en caso de pags de 1 proyecto, el color no cambia
   }
 
   & img {
@@ -405,21 +413,36 @@ article {
 
 
 
-li:nth-of-type(1) {
+.colors1 {
+  --bg: color-mix(in srgb, var(--bg-body) 30%, var(--light));
+}
+
+.colors2 {
   --bg: color-mix(in srgb, var(--bg-body) 40%, var(--light));
 }
 
-li:nth-of-type(2) {
+.colors3 {
+  --bg: color-mix(in srgb, var(--bg-body) 50%, var(--light));
+}
+
+.colors4 {
+  --bg: color-mix(in srgb, var(--bg-body) 70%, var(--light));
+}
+
+
+
+
+.colors5 {
+  --bg: color-mix(in srgb, var(--bg-body) 80%, var(--dark));
+}
+
+.colors6 {
   --bg: color-mix(in srgb, var(--bg-body) 50%, var(--dark));
+
 }
 
-li:nth-of-type(3) {
+.colors7 {
   --bg: color-mix(in srgb, var(--bg-body) 30%, var(--dark));
-
-}
-
-li:nth-of-type(n+9) {
-  --bg: color-mix(in srgb, var(--bg-body) 10%, var(--dark));
 }
 
 

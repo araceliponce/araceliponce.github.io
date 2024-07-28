@@ -1,35 +1,30 @@
-import React from 'react'
-import { ActualNav } from './ActualNav'
-// import ActualCarousel from './ActualCarousel'
+import { useState } from 'react'
 import { experiencia_laboral, projects } from '@/lib/data'
-
 import ActualItem from './ActualItem'
-
-import ReactPlayer from 'react-player'
-import LocalVideoPlayer from './LocalVideo'
 import { highlightWords } from '@/lib/functions'
-import Image from 'next/image'
+import CanvasBoard from './CanvasBoard'
 
 function ActualContent() {
 
-  const words = ['componentes funcionales', 'documentación técnica', 'colaboración', 'sorting', 'renderizado personalizado de valores', 'sistema de diseño', 'flujos de usuarios', 'usabilidad', 'accesibilidad', 'crud', 'dashboards web interactivos', 'responsividad', 'correos usando html', 'ui de tareas multipasos', 'enviar cambios', 'producción ', 'pdf', 'nuevo'];
+  const words = ['creación', 'sistema de diseño', 'flujos de usuarios', 'componentes funcionales', 'documentación técnica', 'tabla con renderizado personalizado', 'procesos crud', 'dashboards', 'interactivos', 'responsividad', 'correos usando html', 'ui de tareas multipasos', 'enviar', 'cambios', 'reportes en formato pdf',];
 
 
+  const [canvasClass, setCanvasClass] = useState('')
   return (
     <main>
 
 
-      <section id='proyectos' className='pb-[10rem]'>
+      <section id='proyectos' className='pb-[10rem]' aria-labelledby='ph'>
 
 
-        <h2>Proyectos</h2>
+        <h2 className='main-heading' id='ph'>Proyectos</h2>
 
         <ul className="projects-grid">
           {projects && projects.map((item, index) => {
 
             return (
 
-              <li key={index}>
+              <li key={index} className={`colors${index + 1}`}>
                 <ActualItem
                   cover={item.cover}
                   videoUrl={item.videoUrl}
@@ -62,45 +57,58 @@ function ActualContent() {
 
 
 
-      <section id='experiencia-laboral' className=''>
+      <section id='experiencia-laboral' className='' aria-labelledby='eh'>
 
 
-        <h2>Experiencia-laboral</h2>
-        <small className='bg-gray-100/50 text-xs py-[.2em] px-[.4em] rounded-md mx-auto block w-fit'>(en construcción)</small>
+        <h2 className='main-heading' id='eh'>Experiencia laboral</h2>
+        {/* <small className='bg-gray-100/50 text-xs py-[.2em] px-[.4em] rounded-md mx-auto block w-fit'>(en construcción)</small> */}
 
-        {/* <a
-          className='link'
-        >
-          <span className="link__icon">
-            <Image src='blue.png' width="25" height="25" alt="" className="icon" />
-          </span>
-          <span className="link__text">
-            <span className="link__text__title">Descarga mi CV</span>
-            <span className="link__text__desc">
-              Aquí detallo mi experiencia profesional
-            </span>
-          </span>
-        </a> */}
 
-        <ul className="grid  lg:grid-cols-2 pt-[2rem]">
+        <ul className="grid  lg:grid-cols-2 text-sm">
           {experiencia_laboral && experiencia_laboral.map((item, index) => {
 
             return (
 
-              <li key={index} className={`max-w-[60ch] ${index == 1 ? 'ms-auto' : ''}`}>
+              <li key={index} className={`max-w-[60ch] pb-[5rem] ${index == 1 ? 'ms-auto' : ''}`}>
                 <article className=' bg- grid grid-rows-[auto,1fr]'>
-                  <div className="leading-none text-sm pb-1">
+                  <div className="pb-1">
                     <h3>{item.role}</h3>
-                    <p>en {item.company}, {item.from} - {item.to}</p>
-                    {item.summary && <p>{item.summary}</p>}
+                    <p>en <span className="border-b border-dashed">{item.company}</span>, {item.from} - {item.to}</p>
+                    {/* <p className='pt-1'>{item.from} - {item.to}</p> */}
+                    {item.summary && <p className='pt-[.5rem] text-sm opacity-85 show-on-hover'>{item.summary}</p>}
                   </div>
-                  <ul className='list changes-color '>
-                    {item.did.map((item, index) => (
-                      <li key={index}>
-                        {highlightWords(item, words)}
-                      </li>
-                    ))}
-                  </ul>
+                  <div
+                    className={`aa relative changes-color-container border text-sm text-to-read colors${index + 5}`}
+                  // onMouseEnter={() => setCanvasClass('erasing')}
+                  >
+
+
+
+                    <CanvasBoard
+                      container='aa'
+                    >
+                      <div>
+                        <ul className='list'>
+                          {item.did.map((item, index) => (
+                            <li key={index}>
+                              {highlightWords(item, words)}
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+
+                    </CanvasBoard>
+                    <div className="main-words-only" aria-hidden='true'>
+                      <ul className='list '>
+                        {item.did.map((item, index) => (
+                          <li key={index}>
+                            {highlightWords(item, words)}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+
                 </article>
               </li>
             )
@@ -110,7 +118,11 @@ function ActualContent() {
 
 
 
+
+
       </section>
+
+
 
 
     </main>

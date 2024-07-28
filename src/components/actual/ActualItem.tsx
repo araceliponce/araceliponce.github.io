@@ -47,7 +47,7 @@ export default function ActualItem({
           }
         </div> */}
 
-        <div className=" changes-color">
+        <div className=" changes-color-container">
           {cover && cover.length > 0 ? (
             <div
             >
