@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # usa rama main de repo llamado jinja....
+      # usa yml en root de rama main de repo llamado jinja....
       - name: Run portfolio action
         uses: araceliponce-es/jinja2portfolio@main
         env:
