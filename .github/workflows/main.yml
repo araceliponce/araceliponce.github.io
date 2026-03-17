@@ -11,12 +11,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
       # usa rama main de repo llamado jinja....
       - name: Run portfolio action
         uses: araceliponce-es/jinja2portfolio@main
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           GH_USERNAME: ${{ github.actor }}
+        with:
+          output_dir: dist
