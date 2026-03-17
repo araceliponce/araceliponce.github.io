@@ -17,6 +17,14 @@ jobs:
       # usa yml en root de rama main de repo llamado jinja....
       - name: Run portfolio action
         uses: araceliponce-es/jinja2portfolio@main
-        env:
-          GH_TOKEN: ${{ secrets.GH_TOKEN }}
-          GH_USERNAME: ${{ github.actor }}
+        with:
+          gh_token: ${{ secrets.GH_TOKEN }}
+          gh_username: ${{ github.actor }}
+
+      # 3. Deploy a GitHub Pages
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4
+        with:
+          # La carpeta generada por tu action
+          # Si quieres que vaya al root de gh-pages, asegúrate que tu action lo genere ahí
+          path: ./
