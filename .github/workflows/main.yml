@@ -23,7 +23,7 @@ jobs:
       - name: Run Portfolio Generator
         uses: araceliponce-es/jinja2portfolio@main
         with:
-          gh_token: ${{ secrets.GITHUB_TOKEN }}
+          gh_token: ${{ secrets.GH_TOKEN }}
           gh_username: ${{ github.actor }}
 
       # 3. Subir artefacto para GitHub Pages
