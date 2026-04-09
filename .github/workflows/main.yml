@@ -20,8 +20,8 @@ jobs:
         uses: actions/checkout@v4
 
       # 2. Ejecutar action
-      - name: Run Portfolio Generator
-        uses: araceliponce-es/jinja2portfolio@main
+      - name: Run action
+        uses: araceliponce-es/pears@main
         with:
           gh_token: ${{ secrets.GH_TOKEN }}
           gh_username: ${{ github.actor }}
