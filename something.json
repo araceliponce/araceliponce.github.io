@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "projects": [
+    {
+      "id": "roomaji-converter",
+      "content": {
+        "en": {},
+        "es": {},
+        "de": {}
+      }
+    },
+    {
+      "id": "hikase",
+      "content": {
+        "en": {},
+        "es": {},
+        "de": {}
+      }
+    }
+  ]
+}
