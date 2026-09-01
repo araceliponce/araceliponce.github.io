@@ -25,7 +25,7 @@ jobs:
         with:
           gh_token: ${{ secrets.GH_TOKEN }}
           gh_username: ${{ github.actor }}
-          tags_to_observe: "automation"
+          topics: "automation"
 
       - name: Test GH_TOKEN
         run: |
