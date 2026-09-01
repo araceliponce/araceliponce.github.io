@@ -25,7 +25,7 @@ jobs:
         with:
           gh_token: ${{ secrets.GH_TOKEN }}
           gh_username: ${{ github.actor }}
-          topics: "automation"
+          config: "config_here.yml"
 
       - name: Test GH_TOKEN
         run: |
